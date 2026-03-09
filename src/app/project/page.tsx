@@ -18,6 +18,7 @@ export default function Projects() {
             <p>This project is a Student Management System designed to manage and organize student information efficiently. It allows users to add, update, delete, and view student records. The project demonstrates my understanding of programming logic, data management, and basic application development.</p>
           </div>
           <div className="project-card-image">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="https://media.istockphoto.com/id/1403897395/photo/unrecognizable-friends-studying-together-in-the-library.jpg?s=612x612&w=0&k=20&c=aV37NDbgIbCDMPQft-2M4OTUmXBtL0N43YVxLDsUNig=" alt="project image" />
           </div>
         </div>
@@ -28,6 +29,7 @@ export default function Projects() {
             <p>This project is a personal portfolio website developed to showcase my skills, projects, and contact information. It is built using HTML and CSS with a clean and responsive design. The website reflects my ability to create structured and user-friendly web pages.</p>
           </div>
           <div className="project-card-image">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="https://images.unsplash.com/photo-1664748512003-8820b08d8161?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cG9ydGZvbGlvJTIwd2Vic2l0ZSUyMGRlc2lnbiUyMGxhcHRvcHxlbnwwfHwwfHx8MA%3D%3D" alt="project image" />
           </div>
         </div>
@@ -38,6 +40,7 @@ export default function Projects() {
             <p>This project is a simple calculator application that performs basic arithmetic operations such as addition, subtraction, multiplication, and division. It highlights my understanding of programming concepts, user input handling, and logical operations.</p>
           </div>
           <div className="project-card-image">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="https://media.istockphoto.com/id/2239089166/photo/online-mortgage-rate-comparison-and-application-on-laptop.jpg?s=612x612&w=0&k=20&c=IodzQsPaxa2QGdHk-B-vvul_aV5K_T4Mmbdd0D7wdJQ=" alt="project image" />
           </div>
         </div>

@@ -6,6 +6,7 @@ export default function Home() {
       <div className="outer-box"></div>
       <div className="main-container">
         <div className="inner-box">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/image/project-manager.jpeg"
             alt="Project Manager Image"
@@ -31,7 +32,7 @@ export default function Home() {
         </div>
         <div className="right-container">
           <h1>Hello</h1>
-          <h3>I'm Kuldeep, a passionate BCA student with an interest in software development and web technologies.</h3>
+          <h3>I&apos;m Kuldeep, a passionate BCA student with an interest in software development and web technologies.</h3>
           <div className="button-group">
             <Link href="/resume" className="btn-resume">RESUME</Link>
             <Link href="/project" className="btn-projects">PROJECTS</Link>
