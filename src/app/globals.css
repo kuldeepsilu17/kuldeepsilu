@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --background: #ffffff;
+    --foreground: #171717;
 }
 
 @theme inline {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+    --font-sans: var(--font-geist-sans);
+    --font-mono: var(--font-geist-mono);
 }
 
 body {
@@ -18,45 +18,73 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
+
 .logo {
-   display: flex;
-      flex-direction: column;
-      line-height:1.2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.2;
 }
+
+@media (min-width: 601px) {
+    .logo {
+        align-items: flex-start;
+    }
+}
+
 .logo .name {
     font-size: 24px;
     font-weight: bold;
     color: #faf5f5;
     letter-spacing: 1px;
 }
+
 .logo .title {
     font-size: 15px;
     color: #cbc8c2;
     letter-spacing: 1px;
     font-family: roboto mono, monospace;
 }
+
 .nev-nav {
-    position : fixed;
+    position: fixed;
     top: 0;
-    left : 0;
+    left: 0;
     width: 100%;
     z-index: 1000;
     background-color: #055656;
-    padding: 10px 10px;
+    padding: 10px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    /* allow wrapping on tiny screens */
 }
+
+@media (max-width: 600px) {
+    .nev-nav {
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+        padding-top: 15px;
+    }
+}
+
 .nev-nav ul {
     list-style-type: none;
     display: flex;
-    margin: 10px;
-    padding: 10px;
-    margin-right: 50px;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+    justify-content: center;
 }
+
 .nev-nav ul li {
-    margin-left: 30px;
+    margin-left: 15px;
+    margin-right: 15px;
 }
+
 .nev-nav ul li a {
     text-decoration: none;
     color: #faf5f5;
@@ -64,90 +92,96 @@ body {
     font-weight: 500;
     transition: 0.1s;
 }
+
 .nev-nav ul li a:hover {
     color: #61a6ef;
 }
-.outer-box {
-    width: 550px;
-    height: 1100px;
-    min-height: 100vh;
+
+.home-background-split {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%;
+    min-width: 450px;
+    height: 100%;
     background-color: #6bbab9;
-    margin-top:0px;
-    margin-bottom: -60px;
+    z-index: -1;
 }
+
+@media (max-width: 900px) {
+    .home-background-split {
+        width: 100%;
+        min-width: 100%;
+    }
+}
+
 .main-container {
     display: flex;
-    justify-content: center; /* Dono boxes ko center mein rakhega */
-    align-items: flex-start;   /* Vertical alignment */
-    gap: 60px;              /* Left aur Right box ke beech ka gap */
-    padding-top: 20px;     /* Navbar se doori */
-    
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 60px;
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+    min-height: calc(100vh - 150px);
 }
+
 .inner-box {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
     align-items: center;
     width: 340px;
-    height: 440px;
     background-color: #46b9b9;
-    margin: 0 auto;
-    position: relative;
-    margin-top: -60%; /* Outer box ke upar uthayega */
-    margin-left: 21%; /* Outer box ke andar thoda right shift karega */
-    z-index: 10;
-    padding: 20px;
+    padding: 40px 20px 60px 20px;
     box-shadow: -10px 10px 50px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    box-sizing: border-box;
 }
+
 .round-immage {
-    position: static;
-    margin-top: 0;
-    margin-bottom: 70px;
-    width: 200px;
-    height: 200px;
     border-radius: 50%;
     object-fit: cover;
+    margin-bottom: 20px;
 }
+
 .username {
     font-size: 28px;
     font-weight: bold;
-    margin: 10px 0;
     color: #fff;
-    position: relative;
+    margin: 10px 0 5px 0;
     text-align: center;
-    top: -60px;
 }
+
 .line {
-    position: relative;
     width: 50px;
     height: 2px;
     background-color: blue;
-    margin: 0px 0;
-    top: -55px;
+    margin: 10px 0;
 }
+
 .Profession {
-    position: relative;
-    height: 2px;
-    width: 50%;
-    text-align: center;
     letter-spacing: 2px;
     font-size: 15px;
     color: #555;
-    margin: 10px 0;
-    top: -45px;
+    margin-bottom: 20px;
+    text-align: center;
 }
+
 .icon-bar {
-    background-color: #fff; /* White bar color */
-    width: 100%;               /* Poore box ki chaurai */
-    height: 44px;              /* Bar ki height */
-    display: flex;             /* Icons ko line mein lane ke liye */
-    justify-content: center;   /* Icons ko horizontally center karega */
-    align-items: center;       /* Icons ko vertically center karega (bar ke beech mein) */
-    gap: 40px;                 /* Icons ke beech ka sahi gap */      
+    background-color: #fff;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
     position: absolute;
     bottom: 0;
     left: 0;
-
 }
 
 .icon-bar a {
@@ -159,29 +193,34 @@ body {
 }
 
 .icon-bar a i {
-    font-size: 20px;           /* Icons ka size */
-    color: #333;               /* Icons ka color black/gray */
+    font-size: 20px;
+    color: #333;
     transition: 0.3s;
 }
 
 .icon-bar a:hover i {
-    color: #007bff;            /* Hover karne par blue color */
+    color: #007bff;
 }
 
 .right-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start; /* Text ko left align karega */
-    gap: 20px;              /* Text ke beech ka gap */
-    max-width: 500px;       /* Text ki chaurai control karne ke liye */
-    margin-top: -61%; /* Outer box ke upar uthayega */
-    margin-right: 20%; /* Outer box ke andar thoda right shift karega */
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 500px;
 }
+
 .right-container h1 {
-    font-size: 120px;        /* Wix jaisa bada "Hello" */
+    font-size: 100px;
     margin: 0;
-    font-weight: 800; /* Extra bold per user request */
+    font-weight: 800;
+}
+
+@media (max-width: 768px) {
+    .right-container h1 {
+        font-size: 60px;
+    }
 }
 
 .button-group {
@@ -191,7 +230,8 @@ body {
 }
 
 .btn-resume {
-    background-color: blue; /* Wix blue color */
+    background-color: blue;
+    /* Wix blue color */
     color: white;
     border: none;
     padding: 10px 25px;
@@ -226,7 +266,7 @@ body {
 
 .site-footer {
     display: flex;
-    justify-content: space-between; /* Left aur Right ko door karne ke liye */
+    justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
     background-color: white;
@@ -234,10 +274,21 @@ body {
     box-sizing: border-box;
     margin-top: auto;
     position: relative;
-    clear:both;
+    clear: both;
     left: 0;
     font-size: 14px;
     z-index: 100;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+@media (max-width: 768px) {
+    .site-footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
 }
 
 .footer-left p {
@@ -248,7 +299,16 @@ body {
 
 .footer-right {
     display: flex;
-    gap: 40px; /* Items ke beech ka gap */
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding-top: 130px;
+        /* accommodate stack-wrapped navbar height */
+    }
 }
 
 .contact-item {
@@ -270,8 +330,10 @@ body {
     transition: 0.3s;
     color: black;
 }
+
 .footer-icons i:hover {
-    color: #007bff; /* Hover karne par blue color */
+    color: #007bff;
+    /* Hover karne par blue color */
 }
 
 /* Projects specific styles from project.html */
@@ -283,6 +345,7 @@ body.project-body {
     padding: 0px;
     flex: 1;
 }
+
 .projects-section {
     display: flex;
     justify-content: center;
@@ -295,14 +358,18 @@ body.project-body {
 .my-projects {
     font-size: 38px;
     color: #070707;
-    margin: 0; /* Remove bottom margin to align perfectly with icon */
-    margin-top: 4px; /* Slightly lower text per user request */
+    margin: 0;
+    /* Remove bottom margin to align perfectly with icon */
+    margin-top: 4px;
+    /* Slightly lower text per user request */
     text-align: center;
-    line-height: 1; /* Match icon line height */
+    line-height: 1;
+    /* Match icon line height */
 }
 
 .fa-square {
-    font-size: 28px; /* Slightly increase size to match heading */
+    font-size: 28px;
+    /* Slightly increase size to match heading */
     color: #0050ff;
     display: flex;
     align-items: center;
@@ -340,6 +407,12 @@ body.project-body {
     min-height: 300px;
 }
 
+@media (max-width: 768px) {
+    .project-card {
+        flex-direction: column;
+    }
+}
+
 .project-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
@@ -352,6 +425,14 @@ body.project-body {
     flex-direction: column;
     justify-content: center;
     border-left: 5px solid #0050ff;
+}
+
+@media (max-width: 768px) {
+    .project-card-content {
+        padding: 20px;
+        border-left: none;
+        border-top: 5px solid #0050ff;
+    }
 }
 
 .project-card h3 {
@@ -381,21 +462,26 @@ body.project-body {
     justify-content: center;
     font-size: 14px;
     color: #999;
+    min-height: 250px;
 }
+
 .project-card-image img {
     max-width: 100%;
     max-height: 100%;
     object-fit: cover;
+    width: 100%;
 }
 
 /* Resume Specific Styles */
-body.resume-body  {
+body.resume-body {
     background-color: #6bbab9;
 }
+
 .resume-container {
     padding: 0px;
     flex: 1;
 }
+
 .resume-section {
     display: flex;
     justify-content: center;
@@ -408,51 +494,61 @@ body.resume-body  {
 .resume {
     font-size: 38px;
     color: #070707;
-    margin: 0; /* Remove bottom margin to align perfectly with icon */
-    margin-top: 4px; /* Slightly lower text per user request */
+    margin: 0;
+    /* Remove bottom margin to align perfectly with icon */
+    margin-top: 4px;
+    /* Slightly lower text per user request */
     text-align: center;
-    line-height: 1; /* Match icon line height */
+    line-height: 1;
+    /* Match icon line height */
 }
 
 .resume-section .fa-solid.fa-square {
-    font-size: 28px; /* Slightly increase size to match heading */
+    font-size: 28px;
+    /* Slightly increase size to match heading */
     color: #0050ff;
     display: flex;
     align-items: center;
     margin: 0;
 }
- .resume-grid {
+
+.resume-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     padding: 20px;
     max-width: 1200px;
 }
+
 .resume-card {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 0;
-     display: flex;
-     overflow: hidden;
-     min-height: 250px;
+    display: flex;
+    overflow: hidden;
+    min-height: 250px;
 }
+
 .resume-card-container {
     display: flex;
     flex-direction: column;
-    gap: 10px;  
+    gap: 10px;
 
 }
+
 .resume-card-container h3 {
     margin: 0;
     font-size: 18px;
     color: #000000;
 }
+
 .resume-card-container p {
     margin: 0;
     font-size: 14px;
-    color: #000000; 
+    color: #000000;
 }
+
 .resume-section-wrapper {
     width: 100%;
     padding: 30px 20px;
@@ -569,6 +665,12 @@ body.resume-body  {
     margin-top: 0;
 }
 
+@media (max-width: 650px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 .skill-card {
     background-color: #f9f9f9;
     padding: 15px;
@@ -611,6 +713,7 @@ body.resume-body  {
 body.contact-body {
     background-color: #6bbab9;
 }
+
 .contact-container {
     flex: 1;
     padding: 40px 20px;
@@ -770,7 +873,7 @@ body.contact-body {
     .contact-content {
         grid-template-columns: 1fr;
     }
-    
+
     .contact-title {
         font-size: 32px;
     }

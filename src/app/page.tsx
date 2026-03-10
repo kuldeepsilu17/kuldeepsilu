@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <>
-      <div className="outer-box"></div>
+      <div className="home-background-split"></div>
       <div className="main-container">
         <div className="inner-box">
           <Image
@@ -17,7 +17,7 @@ export default function Home() {
           />
           <h2 className="username">KULDEEP</h2>
           <div className="line"></div>
-          <p className="Profession">PROJECT MANAGER</p>
+          <p className="Profession" style={{ color: "#eee" }}>PROJECT MANAGER</p>
           <div className="icon-bar">
             <a href="https://github.com/kuldeepsilu17" title="GitHub" target="_blank" rel="noopener noreferrer">
               <i className="fa-brands fa-github"></i>
@@ -46,7 +46,6 @@ export default function Home() {
           </p>
         </div>
       </div>
-      <div style={{ height: "30px" }}></div>
     </>
   );
 }
