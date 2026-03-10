@@ -10,6 +10,18 @@
     --font-mono: var(--font-geist-mono);
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
 body {
     padding-top: 80px;
     margin: 0;
@@ -101,6 +113,14 @@ body {
     opacity: 0.9;
     padding: 5px 8px;
     border-radius: 4px;
+    white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+    .nev-nav ul li a {
+        font-size: 13px;
+        padding: 4px;
+    }
 }
 
 .nev-nav ul li a:hover {
@@ -130,7 +150,7 @@ body {
 .main-container {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     flex-wrap: wrap;
     gap: 60px;
     padding: 60px 20px;
@@ -230,7 +250,8 @@ body {
 }
 
 .right-container h1 {
-    font-size: 100px;
+    font-size: 80px;
+    /* Adjusted from 100px */
     margin: 0;
     font-weight: 800;
 }
@@ -612,6 +633,7 @@ body.resume-body {
     margin-bottom: 20px;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
 }
 
