@@ -66,8 +66,8 @@ body {
     .nev-nav {
         justify-content: center;
         flex-direction: column;
-        gap: 10px;
-        padding-top: 15px;
+        gap: 5px;
+        padding: 10px;
     }
 }
 
@@ -78,11 +78,11 @@ body {
     padding: 0;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 15px;
 }
 
 .nev-nav ul li {
-    margin-left: 15px;
-    margin-right: 15px;
+    margin: 5px;
 }
 
 .nev-nav ul li a {
@@ -134,7 +134,8 @@ body {
     justify-content: flex-start;
     flex-direction: column;
     align-items: center;
-    width: 340px;
+    width: 100%;
+    max-width: 340px;
     background-color: #46b9b9;
     padding: 40px 20px 60px 20px;
     box-shadow: -10px 10px 50px 10px rgba(0, 0, 0, 0.3);
@@ -223,10 +224,23 @@ body {
     }
 }
 
+@media (max-width: 480px) {
+    .right-container h1 {
+        font-size: 48px;
+    }
+
+    .right-container {
+        align-items: center;
+        text-align: center;
+    }
+}
+
 .button-group {
     margin: 30px 0;
     display: flex;
     gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .btn-resume {
@@ -396,6 +410,13 @@ body.project-body {
     margin: 0 auto;
 }
 
+@media (max-width: 480px) {
+    .projects-grid {
+        padding: 10px;
+        gap: 15px;
+    }
+}
+
 .project-card {
     background-color: white;
     border-radius: 8px;
@@ -520,6 +541,14 @@ body.resume-body {
     max-width: 1200px;
 }
 
+@media (max-width: 480px) {
+    .resume-grid {
+        grid-template-columns: 1fr;
+        padding: 10px;
+        gap: 15px;
+    }
+}
+
 .resume-card {
     background-color: #fff;
     border-radius: 8px;
@@ -568,6 +597,24 @@ body.resume-body {
 .resume-section-title i {
     color: #0050ff;
     font-size: 28px;
+}
+
+@media (max-width: 600px) {
+    .resume {
+        font-size: 28px;
+    }
+
+    .my-projects {
+        font-size: 28px;
+    }
+
+    .resume-section-title {
+        font-size: 24px;
+    }
+
+    .resume-section-title i {
+        font-size: 20px;
+    }
 }
 
 .resume-card-content {
@@ -722,6 +769,12 @@ body.contact-body {
     width: 100%;
 }
 
+@media (max-width: 600px) {
+    .contact-container {
+        padding: 20px 10px;
+    }
+}
+
 .contact-title {
     font-size: 42px;
     color: #070707;
@@ -806,6 +859,14 @@ body.contact-body {
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 600px) {
+
+    .contact-form,
+    .contact-info {
+        padding: 20px 15px;
+    }
 }
 
 .form-group {
