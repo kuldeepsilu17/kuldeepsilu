@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -6,11 +7,13 @@ export default function Home() {
       <div className="outer-box"></div>
       <div className="main-container">
         <div className="inner-box">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src="/image/project-manager.jpeg"
             alt="Project Manager Image"
             className="round-immage"
+            width={200}
+            height={200}
+            priority
           />
           <h2 className="username">KULDEEP</h2>
           <div className="line"></div>
