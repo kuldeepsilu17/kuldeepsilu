@@ -1,6 +1,6 @@
 export default function Contact() {
   return (
-    <div style={{ backgroundColor: '#6bbab9', minHeight: 'calc(100vh - 70px)', flex: 1, paddingBottom: '40px' }}>
+    <div style={{ minHeight: 'calc(100vh - 70px)', flex: 1, paddingBottom: '40px' }}>
       <div className="contact-container">
         <h1 className="contact-title">
           <i className="fa-solid fa-envelope"></i>
@@ -11,46 +11,28 @@ export default function Contact() {
           {/* Contact Information */}
           <div className="contact-info">
             <div className="info-item">
-              <p className="info-label">Name</p>
+              <p className="info-label"><i className="fa-solid fa-user" style={{marginRight: '8px'}}></i> Name</p>
               <p className="info-value">Kuldeep Silu</p>
             </div>
             
             <div className="info-item">
-              <p className="info-label">Location</p>
+              <p className="info-label"><i className="fa-solid fa-location-dot" style={{marginRight: '8px'}}></i> Location</p>
               <p className="info-value">Hanumangarh, Rajasthan, India</p>
             </div>
             
             <div className="info-item">
-              <p className="info-label">Email</p>
-              <p className="info-value"><a href="mailto:kuldeepsilu7@gmail.com" style={{ color: '#0050ff', textDecoration: 'none' }}>kuldeepsilu7@gmail.com</a></p>
+              <p className="info-label"><i className="fa-solid fa-envelope" style={{marginRight: '8px'}}></i> Email</p>
+              <p className="info-value"><a href="mailto:kuldeepsilu7@gmail.com" style={{ color: 'var(--primary)', textDecoration: 'none' }}>kuldeepsilu7@gmail.com</a></p>
             </div>
             
             <div className="info-item">
-              <p className="info-label">Phone</p>
+              <p className="info-label"><i className="fa-solid fa-phone" style={{marginRight: '8px'}}></i> Phone</p>
               <p className="info-value">+91 7300302661</p>
             </div>
             
             <div className="info-item">
-              <p className="info-label">Message</p>
+              <p className="info-label"><i className="fa-solid fa-message" style={{marginRight: '8px'}}></i> Message</p>
               <p className="info-value">Feel free to contact me for collaboration, projects or any opportunities. I am always open to learning new technologies and working on interesting web development projects.</p>
-            </div>
-            
-            <div className="info-item">
-              <p className="info-label">Social Links</p>
-              <div className="social-links">
-                <a href="https://github.com/kuldeepsilu17" title="GitHub" target="_blank" rel="noopener noreferrer">
-                  <i className="fa-brands fa-github"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/kuldeep-silu-0b056539b" title="LinkedIn" target="_blank" rel="noopener noreferrer">
-                  <i className="fa-brands fa-linkedin-in"></i>
-                </a>
-                <a href="#" title="Twitter">
-                  <i className="fa-brands fa-twitter"></i>
-                </a>
-                <a href="https://www.instagram.com/kuldeepsilu_17" title="Instagram" target="_blank" rel="noopener noreferrer">
-                  <i className="fa-brands fa-instagram"></i>
-                </a>
-              </div>
             </div>
           </div>
           

@@ -1,51 +1,68 @@
 import Link from "next/link";
 import Image from "next/image";
+import Projects from "./project/page";
+import Resume from "./resume/page";
+import Contact from "./contact/page";
 
 export default function Home() {
   return (
     <>
-      <div className="home-background-split"></div>
-      <div className="main-container">
-        <div className="inner-box">
-          <Image
-            src="/image/project-manager.jpeg"
-            alt="Project Manager Image"
-            className="round-immage"
-            width={200}
-            height={200}
-            priority
-          />
-          <h2 className="username">KULDEEP</h2>
-          <div className="line"></div>
-          <p className="Profession" style={{ color: "#eee" }}>PROJECT MANAGER</p>
-          <div className="icon-bar">
-            <a href="https://github.com/kuldeepsilu17" title="GitHub" target="_blank" rel="noopener noreferrer">
-              <i className="fa-brands fa-github"></i>
-            </a>
-            <a href="#" title="Twitter">
-              <i className="fa-brands fa-twitter"></i>
-            </a>
-            <a href="https://linkedin.com/in/kuldeep-silu-0b056539b" title="LinkedIn" target="_blank" rel="noopener noreferrer">
-              <i className="fa-brands fa-linkedin-in"></i>
-            </a>
-            <a href="https://www.instagram.com/kuldeepsilu_17" title="Instagram" target="_blank" rel="noopener noreferrer">
-              <i className="fa-brands fa-instagram"></i>
-            </a>
+      <section id="home" style={{ position: 'relative', zIndex: 0 }}>
+        <div className="home-background-split"></div>
+        <div className="main-container">
+          <div className="inner-box">
+            <Image
+              src="/image/project-manager.jpeg"
+              alt="Project Manager Image"
+              className="round-immage"
+              width={200}
+              height={200}
+              priority
+            />
+            <h2 className="username">KULDEEP</h2>
+            <div className="line"></div>
+            <p className="Profession" style={{ color: "#eee" }}>PROJECT MANAGER</p>
+            <div className="icon-bar">
+              <a href="https://github.com/kuldeepsilu17" title="GitHub" target="_blank" rel="noopener noreferrer">
+                <i className="fa-brands fa-github"></i>
+              </a>
+              <a href="#" title="Twitter">
+                <i className="fa-brands fa-twitter"></i>
+              </a>
+              <a href="https://linkedin.com/in/kuldeep-silu-0b056539b" title="LinkedIn" target="_blank" rel="noopener noreferrer">
+                <i className="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a href="https://www.instagram.com/kuldeepsilu_17" title="Instagram" target="_blank" rel="noopener noreferrer">
+                <i className="fa-brands fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+          <div className="right-container">
+            <h1>Hello</h1>
+            <h3>I&apos;m Kuldeep, a passionate BCA student with an interest in software development and web technologies.</h3>
+            <div className="button-group">
+              <Link href="#resume" className="btn-resume">RESUME</Link>
+              <Link href="#project" className="btn-projects">PROJECTS</Link>
+            </div>
+            <p className="description">
+              I have basic knowledge of Java, PHP, HTML and programming concepts.
+              I like building small projects and continuously learning new skills in the IT field.
+            </p>
           </div>
         </div>
-        <div className="right-container">
-          <h1>Hello</h1>
-          <h3>I&apos;m Kuldeep, a passionate BCA student with an interest in software development and web technologies.</h3>
-          <div className="button-group">
-            <Link href="/resume" className="btn-resume">RESUME</Link>
-            <Link href="/project" className="btn-projects">PROJECTS</Link>
-          </div>
-          <p className="description">
-            I have basic knowledge of Java, PHP, HTML and programming concepts.
-            I like building small projects and continuously learning new skills in the IT field.
-          </p>
-        </div>
-      </div>
+      </section>
+
+      <section id="project">
+        <Projects />
+      </section>
+
+      <section id="resume">
+        <Resume />
+      </section>
+
+      <section id="contact">
+        <Contact />
+      </section>
     </>
   );
 }

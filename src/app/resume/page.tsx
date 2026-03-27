@@ -1,6 +1,6 @@
 export default function Resume() {
   return (
-    <div style={{ backgroundColor: '#6bbab9', minHeight: 'calc(100vh - 70px)', paddingBottom: '40px', flex: 1 }}>
+    <div style={{ minHeight: 'calc(100vh - 70px)', paddingBottom: '40px', flex: 1 }}>
       <div className="resume-container">
         <div className="resume-section">
           <i className="fa-solid fa-square"></i>

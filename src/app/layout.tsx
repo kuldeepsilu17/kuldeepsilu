@@ -37,10 +37,10 @@ export default function RootLayout({
             <div className="title">Project Manager</div>
           </div>
           <ul>
-            <li><Link href="/">About me</Link></li>
-            <li><Link href="/project">Projects</Link></li>
-            <li><Link href="/resume">Resume</Link></li>
-            <li><Link href="/contact">Contact me</Link></li>
+            <li><Link href="#home">About me</Link></li>
+            <li><Link href="#project">Projects</Link></li>
+            <li><Link href="#resume">Resume</Link></li>
+            <li><Link href="#contact">Contact me</Link></li>
           </ul>
         </nav>
         {children}

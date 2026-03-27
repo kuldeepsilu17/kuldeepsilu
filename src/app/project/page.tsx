@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Projects() {
   return (
-    <div className="project-container" style={{ backgroundColor: '#6bbab9', minHeight: 'calc(100vh - 70px)', paddingBottom: '40px' }}>
+    <div className="project-container" style={{ minHeight: 'calc(100vh - 70px)', paddingBottom: '40px' }}>
       <div className="projects-section">
         <i className="fa-solid fa-square"></i>
         <h1 className="my-projects">Projects</h1>
