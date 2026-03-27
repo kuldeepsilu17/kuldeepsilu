@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 
+import Navbar from "@/components/Navbar";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -31,18 +33,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <nav className="nev-nav">
-          <div className="logo">
-            <div className="name">KULDEEP</div>
-            <div className="title">Project Manager</div>
-          </div>
-          <ul>
-            <li><Link href="#home">About me</Link></li>
-            <li><Link href="#project">Projects</Link></li>
-            <li><Link href="#resume">Resume</Link></li>
-            <li><Link href="#contact">Contact me</Link></li>
-          </ul>
-        </nav>
+        <Navbar />
         {children}
         <footer className="site-footer">
           <div className="footer-left">
