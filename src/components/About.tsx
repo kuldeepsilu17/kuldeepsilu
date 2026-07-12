@@ -22,17 +22,17 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-24 md:py-32 bg-transparent relative overflow-hidden border-y border-border-primary">
+    <section id="about" className="py-16 md:py-20 bg-transparent relative overflow-hidden border-y border-border-primary">
       {/* Background spotlights */}
       <div className="absolute top-[30%] right-[10%] w-[300px] h-[300px] rounded-full bg-brand-accent/5 dark:bg-brand-accent/2 blur-[80px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         {/* Section Header */}
-        <div className="mb-16 md:mb-20 text-center md:text-left">
-          <p className="text-xs font-bold tracking-widest text-brand-accent uppercase mb-3">
+        <div className="mb-12 text-center md:text-left">
+          <p className="text-xs font-bold tracking-widest text-brand-accent uppercase mb-2">
             01 / Background
           </p>
-          <h2 className="text-4xl md:text-5xl font-black tracking-tight text-text-primary">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-text-primary">
             About Me
           </h2>
         </div>

@@ -1,115 +1,243 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Code, Database, Terminal, Settings } from "lucide-react";
+import { motion, Variants } from "framer-motion";
+import { Code2, Globe, Layers, Server, Database, Settings } from "lucide-react";
 
 export default function Skills() {
-  const [activeTab, setActiveTab] = useState<"all" | "frontend" | "backend" | "database" | "tools">("all");
-
-  const categories = [
-    { id: "all", name: "All Tech" },
-    { id: "frontend", name: "Frontend" },
-    { id: "backend", name: "Backend" },
-    { id: "database", name: "Database" },
-    { id: "tools", name: "Tools & Git" },
+  const frontendSkills = [
+    { name: "React.js", level: "Expert", progress: 90, icon: <Code2 size={16} /> },
+    { name: "Next.js", level: "Expert", progress: 88, icon: <Globe size={16} /> },
+    { name: "Tailwind CSS", level: "Expert", progress: 95, icon: <Layers size={16} /> },
+    { name: "JavaScript", level: "Expert", progress: 90, icon: <Code2 size={16} /> },
   ];
 
-  const skills = [
-    { name: "HTML5", level: "Expert", category: "frontend", icon: <Code size={18} /> },
-    { name: "CSS3", level: "Expert", category: "frontend", icon: <Code size={18} /> },
-    { name: "JavaScript", level: "Advanced", category: "frontend", icon: <Code size={18} /> },
-    { name: "React.js", level: "Advanced", category: "frontend", icon: <Code size={18} /> },
-    { name: "Next.js", level: "Advanced", category: "frontend", icon: <Code size={18} /> },
-    
-    { name: "Node.js", level: "Intermediate", category: "backend", icon: <Terminal size={18} /> },
-    { name: "Express.js", level: "Advanced", category: "backend", icon: <Terminal size={18} /> },
-    { name: "Python", level: "Intermediate", category: "backend", icon: <Terminal size={18} /> },
-    
-    { name: "MongoDB", level: "Intermediate", category: "database", icon: <Database size={18} /> },
-    { name: "MySQL", level: "Advanced", category: "database", icon: <Database size={18} /> },
-    
-    { name: "Git", level: "Advanced", category: "tools", icon: <Settings size={18} /> },
-    { name: "GitHub", level: "Advanced", category: "tools", icon: <Settings size={18} /> },
-    { name: "VS Code", level: "Expert", category: "tools", icon: <Settings size={18} /> },
+  const backendSkills = [
+    { name: "Node.js", level: "Expert", progress: 85, icon: <Server size={16} /> },
+    { name: "Express.js", level: "Advanced", progress: 80, icon: <Server size={16} /> },
   ];
 
-  const filteredSkills = activeTab === "all" ? skills : skills.filter((s) => s.category === activeTab);
+  const databaseSkills = [
+    { name: "MySQL", level: "Advanced", progress: 80, icon: <Database size={16} /> },
+  ];
+
+  const workflowTools = [
+    { name: "Git", level: "Advanced", progress: 85, icon: <Settings size={16} /> },
+    { name: "GitHub", level: "Advanced", progress: 90, icon: <Settings size={16} /> },
+    { name: "VS Code", level: "Expert", progress: 95, icon: <Settings size={16} /> },
+  ];
+
+  const cardVariants: Variants = {
+    hidden: { opacity: 0, y: 25 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { type: "spring", stiffness: 100, damping: 15 }
+    }
+  };
 
   return (
-    <section id="skills" className="py-24 md:py-32 bg-transparent relative overflow-hidden border-y border-border-primary">
+    <section id="skills" className="py-16 md:py-20 bg-transparent relative overflow-hidden border-y border-border-primary">
       <div className="absolute bottom-[10%] right-[5%] w-[350px] h-[350px] rounded-full bg-brand-accent/5 dark:bg-brand-accent/2 blur-[80px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
         {/* Section Header */}
-        <div className="mb-16 text-center">
-          <p className="text-xs font-bold tracking-widest text-brand-accent uppercase mb-3">
+        <div className="mb-12 text-center">
+          <p className="text-xs font-bold tracking-widest text-brand-accent uppercase mb-2">
             03 / Expertise
           </p>
-          <h2 className="text-4xl md:text-5xl font-black tracking-tight text-text-primary mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-text-primary mb-3">
             Skills & Technologies
           </h2>
-          <p className="text-text-secondary max-w-xl mx-auto font-medium text-sm md:text-base leading-relaxed">
-            A breakdown of my technical domain expertise, focusing on structural layout and system scaling capabilities.
+          <p className="text-text-secondary max-w-xl mx-auto font-medium text-sm leading-relaxed">
+            A comprehensive overview of backend routing systems, design principles, database models, and developer tools.
           </p>
         </div>
 
-        {/* Tab Controls */}
-        <div className="flex flex-wrap justify-center gap-2 mb-12">
-          {categories.map((cat) => (
-            <button
-              key={cat.id}
-              onClick={() => setActiveTab(cat.id as typeof activeTab)}
-              className={`px-5 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-all duration-300 border cursor-pointer ${
-                activeTab === cat.id
-                  ? "bg-brand-accent text-white border-transparent shadow-md shadow-brand-accent/15"
-                  : "bg-bg-card text-text-secondary border-border-primary hover:border-brand-accent/30 hover:text-brand-accent hover:scale-[1.02]"
-              }`}
-            >
-              {cat.name}
-            </button>
-          ))}
+        {/* Bento Grid layout */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          
+          {/* Box 1: Frontend Engineering (col-span-2) */}
+          <motion.div
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            className="md:col-span-2 glass-panel p-6 md:p-8 rounded-3xl relative overflow-hidden group hover:shadow-xl transition-all duration-300"
+          >
+            <div className="absolute top-0 right-0 p-8 text-brand-accent/5 pointer-events-none">
+              <Layers size={140} />
+            </div>
+
+            <div className="relative z-10 space-y-6">
+              <div>
+                <span className="inline-flex items-center space-x-2 text-[10px] font-bold tracking-widest text-brand-accent uppercase">
+                  <Code2 size={12} />
+                  <span>Frontend Engineering</span>
+                </span>
+                <h3 className="text-lg font-bold text-text-primary mt-2">
+                  Responsive & Interactive Interfaces
+                </h3>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                {frontendSkills.map((skill) => (
+                  <div key={skill.name} className="space-y-1.5 p-3 rounded-2xl bg-bg-secondary/40 border border-border-primary/50">
+                    <div className="flex justify-between items-center text-xs">
+                      <span className="font-semibold text-text-primary flex items-center space-x-1.5">
+                        <span className="text-brand-accent">{skill.icon}</span>
+                        <span>{skill.name}</span>
+                      </span>
+                      <span className="font-mono text-text-muted">{skill.level}</span>
+                    </div>
+                    <div className="h-1.5 rounded-full bg-bg-secondary border border-border-primary/30 overflow-hidden">
+                      <div
+                        style={{ width: `${skill.progress}%` }}
+                        className="h-full rounded-full bg-brand-accent"
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Box 2: Backend Stack (col-span-1) */}
+          <motion.div
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            className="md:col-span-1 glass-panel p-6 md:p-8 rounded-3xl relative overflow-hidden group hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+          >
+            <div className="absolute top-0 right-0 p-8 text-brand-accent/5 pointer-events-none">
+              <Server size={100} />
+            </div>
+
+            <div className="relative z-10 space-y-6">
+              <div>
+                <span className="inline-flex items-center space-x-2 text-[10px] font-bold tracking-widest text-brand-accent uppercase">
+                  <Server size={12} />
+                  <span>Server Logic</span>
+                </span>
+                <h3 className="text-lg font-bold text-text-primary mt-2">
+                  Node & API Servers
+                </h3>
+              </div>
+
+              <div className="space-y-4 pt-2">
+                {backendSkills.map((skill) => (
+                  <div key={skill.name} className="space-y-1.5 p-3 rounded-2xl bg-bg-secondary/40 border border-border-primary/50">
+                    <div className="flex justify-between items-center text-xs">
+                      <span className="font-semibold text-text-primary flex items-center space-x-1.5">
+                        <span className="text-brand-accent">{skill.icon}</span>
+                        <span>{skill.name}</span>
+                      </span>
+                      <span className="font-mono text-[10px] text-text-muted">{skill.level}</span>
+                    </div>
+                    <div className="h-1.5 rounded-full bg-bg-secondary border border-border-primary/30 overflow-hidden">
+                      <div
+                        style={{ width: `${skill.progress}%` }}
+                        className="h-full rounded-full bg-brand-accent"
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Box 3: Databases (col-span-1) */}
+          <motion.div
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            className="md:col-span-1 glass-panel p-6 md:p-8 rounded-3xl relative overflow-hidden group hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+          >
+            <div className="absolute top-0 right-0 p-8 text-brand-accent/5 pointer-events-none">
+              <Database size={100} />
+            </div>
+
+            <div className="relative z-10 space-y-6">
+              <div>
+                <span className="inline-flex items-center space-x-2 text-[10px] font-bold tracking-widest text-brand-accent uppercase">
+                  <Database size={12} />
+                  <span>Data Architecture</span>
+                </span>
+                <h3 className="text-lg font-bold text-text-primary mt-2">
+                  Relational Schemas
+                </h3>
+              </div>
+
+              <div className="space-y-4 pt-2">
+                {databaseSkills.map((skill) => (
+                  <div key={skill.name} className="space-y-1.5 p-3 rounded-2xl bg-bg-secondary/40 border border-border-primary/50">
+                    <div className="flex justify-between items-center text-xs">
+                      <span className="font-semibold text-text-primary flex items-center space-x-1.5">
+                        <span className="text-brand-accent">{skill.icon}</span>
+                        <span>{skill.name}</span>
+                      </span>
+                      <span className="font-mono text-[10px] text-text-muted">{skill.level}</span>
+                    </div>
+                    <div className="h-1.5 rounded-full bg-bg-secondary border border-border-primary/30 overflow-hidden">
+                      <div
+                        style={{ width: `${skill.progress}%` }}
+                        className="h-full rounded-full bg-brand-accent"
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Box 4: Workflow & Developer Tools (col-span-2) */}
+          <motion.div
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            className="md:col-span-2 glass-panel p-6 md:p-8 rounded-3xl relative overflow-hidden group hover:shadow-xl transition-all duration-300"
+          >
+            <div className="absolute top-0 right-0 p-8 text-brand-accent/5 pointer-events-none">
+              <Settings size={140} />
+            </div>
+
+            <div className="relative z-10 space-y-6">
+              <div>
+                <span className="inline-flex items-center space-x-2 text-[10px] font-bold tracking-widest text-brand-accent uppercase">
+                  <Settings size={12} />
+                  <span>Workflow & Environment</span>
+                </span>
+                <h3 className="text-lg font-bold text-text-primary mt-2">
+                  Version Control & Code Editing
+                </h3>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+                {workflowTools.map((skill) => (
+                  <div key={skill.name} className="space-y-1.5 p-3 rounded-2xl bg-bg-secondary/40 border border-border-primary/50">
+                    <div className="flex justify-between items-center text-xs">
+                      <span className="font-semibold text-text-primary flex items-center space-x-1.5">
+                        <span className="text-brand-accent">{skill.icon}</span>
+                        <span>{skill.name}</span>
+                      </span>
+                      <span className="font-mono text-[10px] text-text-muted">{skill.level}</span>
+                    </div>
+                    <div className="h-1.5 rounded-full bg-bg-secondary border border-border-primary/30 overflow-hidden">
+                      <div
+                        style={{ width: `${skill.progress}%` }}
+                        className="h-full rounded-full bg-brand-accent"
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+          
         </div>
-
-        {/* Interactive Skills Grid */}
-        <motion.div
-          layout
-          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6"
-        >
-          <AnimatePresence mode="popLayout">
-            {filteredSkills.map((skill) => (
-              <motion.div
-                layout
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.25 }}
-                key={skill.name}
-                className="glass-panel p-6 rounded-2xl flex flex-col justify-between group hover:border-brand-accent/40 hover:shadow-md hover:shadow-brand-accent/5 transition-all duration-300 relative overflow-hidden"
-              >
-                {/* Glow highlight on hover */}
-                <div className="absolute -bottom-6 -right-6 w-16 h-16 rounded-full bg-brand-accent/5 dark:bg-brand-accent/10 blur-xl group-hover:scale-150 transition-transform duration-500" />
-                
-                <div className="space-y-4">
-                  <div className="text-text-secondary group-hover:text-brand-accent transition-colors duration-300">
-                    {skill.icon}
-                  </div>
-                  
-                  <div>
-                    <h3 className="font-extrabold text-text-primary tracking-tight">
-                      {skill.name}
-                    </h3>
-                    <p className="text-xs font-mono text-text-muted mt-1 uppercase tracking-wider">
-                      {skill.level}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </motion.div>
-
       </div>
     </section>
   );

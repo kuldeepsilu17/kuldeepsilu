@@ -24,20 +24,20 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 md:py-32 bg-transparent relative overflow-hidden">
+    <section id="contact" className="py-16 md:py-20 bg-transparent relative overflow-hidden">
       <div className="absolute top-[20%] left-[5%] w-[350px] h-[350px] rounded-full bg-brand-accent/5 dark:bg-brand-accent/2 blur-[80px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
         {/* Section Header */}
-        <div className="mb-16 md:mb-20 text-center">
-          <p className="text-xs font-bold tracking-widest text-brand-accent uppercase mb-3">
+        <div className="mb-12 text-center">
+          <p className="text-xs font-bold tracking-widest text-brand-accent uppercase mb-2">
             06 / Connect
           </p>
-          <h2 className="text-4xl md:text-5xl font-black tracking-tight text-text-primary">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-text-primary">
             Get In Touch
           </h2>
-          <p className="text-text-secondary mt-4 max-w-xl mx-auto text-sm md:text-base leading-relaxed">
+          <p className="text-text-secondary mt-3 max-w-xl mx-auto text-sm md:text-base leading-relaxed">
             Have a project in mind, need a full-stack developer, or just want to connect? Hit the form below.
           </p>
         </div>
