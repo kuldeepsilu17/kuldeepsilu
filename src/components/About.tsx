@@ -22,13 +22,13 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-16 md:py-20 bg-transparent relative overflow-hidden border-y border-border-primary">
+    <section id="about" className="py-12 md:py-20 bg-transparent relative overflow-hidden border-y border-border-primary">
       {/* Background spotlights */}
       <div className="absolute top-[30%] right-[10%] w-[300px] h-[300px] rounded-full bg-brand-accent/5 dark:bg-brand-accent/2 blur-[80px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         {/* Section Header */}
-        <div className="mb-12 text-center md:text-left">
+        <div className="mb-8 md:mb-12 text-center md:text-left">
           <p className="text-xs font-bold tracking-widest text-brand-accent uppercase mb-2">
             01 / Background
           </p>
@@ -46,7 +46,7 @@ export default function About() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="md:col-span-1 glass-panel p-6 rounded-3xl relative overflow-hidden group hover:shadow-xl transition-all duration-300 flex items-center justify-center min-h-[300px]"
+            className="md:col-span-1 glass-panel p-4 md:p-6 rounded-3xl relative overflow-hidden group hover:shadow-xl transition-all duration-300 flex items-center justify-center min-h-[220px] md:min-h-[300px]"
           >
             <div className="relative w-full h-full rounded-2xl overflow-hidden aspect-square">
               <Image
@@ -65,10 +65,10 @@ export default function About() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="md:col-span-2 glass-panel p-8 md:p-10 rounded-3xl relative overflow-hidden group hover:shadow-xl transition-all duration-300"
+            className="md:col-span-2 glass-panel p-5 sm:p-8 md:p-10 rounded-3xl relative overflow-hidden group hover:shadow-xl transition-all duration-300"
           >
             <div className="absolute top-0 right-0 p-8 text-text-muted pointer-events-none">
-              <BookOpen size={120} className="opacity-15" />
+              <BookOpen size={120} className="opacity-10" />
             </div>
             
             <div className="relative z-10 flex flex-col h-full justify-between space-y-6">
@@ -77,7 +77,7 @@ export default function About() {
                   <Brain size={14} />
                   <span>Academic Journey</span>
                 </span>
-                <h3 className="text-2xl md:text-3xl font-extrabold text-text-primary leading-tight">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-text-primary leading-tight">
                   Pursuing BCA & Exploring AI Integrations
                 </h3>
                 <p className="text-text-secondary leading-relaxed">
@@ -105,10 +105,10 @@ export default function About() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="glass-panel p-8 md:p-10 rounded-3xl relative overflow-hidden group hover:shadow-xl transition-all duration-300"
+            className="glass-panel p-5 sm:p-8 md:p-10 rounded-3xl relative overflow-hidden group hover:shadow-xl transition-all duration-300"
           >
             <div className="absolute top-0 right-0 p-8 text-text-muted pointer-events-none">
-              <Cpu size={120} className="opacity-15" />
+              <Cpu size={120} className="opacity-10" />
             </div>
 
             <div className="relative z-10 flex flex-col h-full justify-between space-y-6">
@@ -117,7 +117,7 @@ export default function About() {
                   <Code size={14} />
                   <span>My Focus</span>
                 </span>
-                <h3 className="text-2xl font-extrabold text-text-primary leading-tight">
+                <h3 className="text-xl font-bold text-text-primary leading-tight">
                   Premium Web Systems
                 </h3>
                 <p className="text-text-secondary leading-relaxed">
@@ -147,11 +147,11 @@ export default function About() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="md:col-span-2 glass-panel p-8 md:p-10 rounded-3xl relative overflow-hidden group hover:shadow-xl transition-all duration-300"
+            className="md:col-span-2 glass-panel p-5 sm:p-8 md:p-10 rounded-3xl relative overflow-hidden group hover:shadow-xl transition-all duration-300"
           >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center">
               <div className="space-y-4">
-                <h3 className="text-2xl font-extrabold text-text-primary">
+                <h3 className="text-xl md:text-2xl font-bold text-text-primary">
                   Technical Core Capacities
                 </h3>
                 <p className="text-text-secondary leading-relaxed">

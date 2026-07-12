@@ -36,7 +36,7 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-16 md:py-20 bg-transparent relative overflow-hidden">
+    <section id="projects" className="py-12 md:py-20 bg-transparent relative overflow-hidden">
       <div className="absolute top-[10%] left-[5%] w-[400px] h-[400px] rounded-full bg-brand-accent/5 dark:bg-brand-accent/2 blur-[100px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
@@ -67,7 +67,7 @@ export default function Projects() {
             className="md:col-span-2 glass-panel rounded-3xl overflow-hidden group hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
           >
             {/* Image container */}
-            <div className="w-full h-56 sm:h-64 md:h-72 relative overflow-hidden bg-bg-secondary">
+            <div className="w-full h-48 sm:h-64 md:h-72 relative overflow-hidden bg-bg-secondary">
               <Image
                 src={projects[0].image}
                 alt={projects[0].title}
@@ -80,7 +80,7 @@ export default function Projects() {
             </div>
 
             {/* Content area */}
-            <div className="p-6 md:p-8 space-y-4 flex-grow flex flex-col justify-between">
+            <div className="p-5 md:p-8 space-y-4 flex-grow flex flex-col justify-between">
               <div className="space-y-3">
                 <span className="inline-flex items-center space-x-2 text-[10px] font-bold tracking-widest text-brand-accent uppercase">
                   <Code size={12} />
@@ -141,7 +141,7 @@ export default function Projects() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="md:col-span-1 glass-panel rounded-3xl overflow-hidden group hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
           >
-            <div className="w-full h-48 relative overflow-hidden bg-bg-secondary">
+            <div className="w-full h-40 sm:h-48 relative overflow-hidden bg-bg-secondary">
               <Image
                 src={projects[1].image}
                 alt={projects[1].title}
@@ -153,7 +153,7 @@ export default function Projects() {
               <div className="absolute inset-0 bg-neutral-950/10 dark:bg-neutral-950/20 group-hover:bg-neutral-950/0 transition-colors duration-300" />
             </div>
 
-            <div className="p-6 space-y-4 flex-grow flex flex-col justify-between">
+            <div className="p-5 space-y-4 flex-grow flex flex-col justify-between">
               <div className="space-y-3">
                 <span className="inline-flex items-center space-x-2 text-[10px] font-bold tracking-widest text-brand-accent uppercase">
                   <Code size={12} />
@@ -210,7 +210,7 @@ export default function Projects() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="md:col-span-1 glass-panel rounded-3xl overflow-hidden group hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
           >
-            <div className="w-full h-48 relative overflow-hidden bg-bg-secondary">
+            <div className="w-full h-40 sm:h-48 relative overflow-hidden bg-bg-secondary">
               <Image
                 src={projects[2].image}
                 alt={projects[2].title}
@@ -222,7 +222,7 @@ export default function Projects() {
               <div className="absolute inset-0 bg-neutral-950/10 dark:bg-neutral-950/20 group-hover:bg-neutral-950/0 transition-colors duration-300" />
             </div>
 
-            <div className="p-6 space-y-4 flex-grow flex flex-col justify-between">
+            <div className="p-5 space-y-4 flex-grow flex flex-col justify-between">
               <div className="space-y-3">
                 <span className="inline-flex items-center space-x-2 text-[10px] font-bold tracking-widest text-brand-accent uppercase">
                   <Code size={12} />
@@ -277,7 +277,7 @@ export default function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="md:col-span-2 glass-panel p-6 md:p-8 rounded-3xl overflow-hidden group hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative bg-brand-soft/10 border border-brand-accent/10"
+            className="md:col-span-2 glass-panel p-5 md:p-8 rounded-3xl overflow-hidden group hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative bg-brand-soft/10 border border-brand-accent/10"
           >
             {/* Ambient Background Glow */}
             <div className="absolute top-0 right-0 p-8 text-brand-accent/5 pointer-events-none">

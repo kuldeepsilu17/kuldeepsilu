@@ -47,8 +47,8 @@ export default function Contact() {
           
           {/* Quick Info Box */}
           <div className="lg:col-span-5 space-y-8">
-            <div className="glass-panel p-8 rounded-3xl space-y-6 hover:shadow-lg transition-all duration-300">
-              <h3 className="text-2xl font-extrabold text-text-primary tracking-tight">
+            <div className="glass-panel p-5 sm:p-8 rounded-3xl space-y-6 hover:shadow-lg transition-all duration-300">
+              <h3 className="text-xl sm:text-2xl font-bold text-text-primary tracking-tight">
                 Contact Details
               </h3>
               
@@ -117,7 +117,7 @@ export default function Contact() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="glass-panel p-8 md:p-10 rounded-3xl hover:shadow-xl transition-all duration-300"
+              className="glass-panel p-5 sm:p-8 md:p-10 rounded-3xl hover:shadow-xl transition-all duration-300"
             >
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -133,7 +133,7 @@ export default function Contact() {
                       onChange={handleChange}
                       placeholder="Your Name"
                       required
-                      className="w-full px-5 py-3 rounded-2xl bg-bg-secondary border border-border-primary text-text-primary placeholder-text-muted/60 focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/15 transition-all duration-200 text-sm"
+                      className="w-full px-4 py-2.5 rounded-xl bg-bg-secondary border border-border-primary text-text-primary placeholder-text-muted/60 focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/15 transition-all duration-200 text-sm"
                     />
                   </div>
                   <div className="space-y-2">
@@ -148,7 +148,7 @@ export default function Contact() {
                       onChange={handleChange}
                       placeholder="info@example.com"
                       required
-                      className="w-full px-5 py-3 rounded-2xl bg-bg-secondary border border-border-primary text-text-primary placeholder-text-muted/60 focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/15 transition-all duration-200 text-sm"
+                      className="w-full px-4 py-2.5 rounded-xl bg-bg-secondary border border-border-primary text-text-primary placeholder-text-muted/60 focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/15 transition-all duration-200 text-sm"
                     />
                   </div>
                 </div>
@@ -165,7 +165,7 @@ export default function Contact() {
                     onChange={handleChange}
                     placeholder="Project Inquiry / Collaboration"
                     required
-                    className="w-full px-5 py-3 rounded-2xl bg-bg-secondary border border-border-primary text-text-primary placeholder-text-muted/60 focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/15 transition-all duration-200 text-sm"
+                    className="w-full px-4 py-2.5 rounded-xl bg-bg-secondary border border-border-primary text-text-primary placeholder-text-muted/60 focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/15 transition-all duration-200 text-sm"
                   />
                 </div>
 
@@ -181,14 +181,14 @@ export default function Contact() {
                     onChange={handleChange}
                     placeholder="Your message details..."
                     required
-                    className="w-full px-5 py-3 rounded-2xl bg-bg-secondary border border-border-primary text-text-primary placeholder-text-muted/60 focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/15 transition-all duration-200 text-sm resize-none"
+                    className="w-full px-4 py-2.5 rounded-xl bg-bg-secondary border border-border-primary text-text-primary placeholder-text-muted/60 focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/15 transition-all duration-200 text-sm resize-none"
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={status === "sending"}
-                  className="w-full group flex items-center justify-center space-x-2 px-8 py-3.5 rounded-full bg-brand-accent hover:bg-brand-hover text-white font-bold shadow-md hover:shadow-lg hover:shadow-brand-accent/20 hover:scale-[1.01] active:scale-[0.99] transition-all duration-300 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full group flex items-center justify-center space-x-2 px-6 py-3 rounded-full bg-brand-accent hover:bg-brand-hover text-white font-bold shadow-md hover:shadow-lg hover:shadow-brand-accent/20 hover:scale-[1.01] active:scale-[0.99] transition-all duration-300 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
                 >
                   {status === "sending" ? (
                     <span>Sending...</span>

@@ -73,7 +73,7 @@ export default function Achievements() {
   };
 
   return (
-    <section id="achievements" className="py-16 md:py-20 bg-transparent relative overflow-hidden border-y border-border-primary">
+    <section id="achievements" className="py-12 md:py-20 bg-transparent relative overflow-hidden border-y border-border-primary">
       <div className="absolute top-[10%] right-[10%] w-[350px] h-[350px] rounded-full bg-brand-accent/5 dark:bg-brand-accent/2 blur-[80px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
@@ -97,7 +97,7 @@ export default function Achievements() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="md:col-span-1 glass-panel p-6 rounded-3xl flex flex-col justify-between hover:shadow-lg transition-all duration-300 relative group"
+            className="md:col-span-1 glass-panel p-5 sm:p-6 rounded-3xl flex flex-col justify-between hover:shadow-lg transition-all duration-300 relative group"
           >
             <div className="p-2.5 rounded-2xl bg-bg-secondary border border-border-primary text-text-secondary self-start mb-4 group-hover:scale-105 transition-transform duration-300">
               {stats[0].icon}
@@ -116,7 +116,7 @@ export default function Achievements() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="md:col-span-1 glass-panel p-6 rounded-3xl flex flex-col justify-between hover:shadow-lg transition-all duration-300 relative group"
+            className="md:col-span-1 glass-panel p-5 sm:p-6 rounded-3xl flex flex-col justify-between hover:shadow-lg transition-all duration-300 relative group"
           >
             <div className="p-2.5 rounded-2xl bg-bg-secondary border border-border-primary text-text-secondary self-start mb-4 group-hover:scale-105 transition-transform duration-300">
               {stats[1].icon}
@@ -135,7 +135,7 @@ export default function Achievements() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="md:col-span-2 glass-panel p-6 rounded-3xl relative overflow-hidden flex flex-col justify-between group hover:shadow-xl transition-all duration-300"
+            className="md:col-span-2 glass-panel p-5 sm:p-8 rounded-3xl relative overflow-hidden flex flex-col justify-between group hover:shadow-xl transition-all duration-300"
           >
             <div className="absolute top-0 right-0 p-8 text-text-muted pointer-events-none">
               <MessageSquare size={80} className="opacity-5" />
@@ -161,7 +161,7 @@ export default function Achievements() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="md:col-span-2 glass-panel p-6 rounded-3xl relative overflow-hidden flex flex-col justify-between group hover:shadow-xl transition-all duration-300"
+            className="md:col-span-2 glass-panel p-5 sm:p-8 rounded-3xl relative overflow-hidden flex flex-col justify-between group hover:shadow-xl transition-all duration-300"
           >
             <div className="absolute top-0 right-0 p-8 text-text-muted pointer-events-none">
               <MessageSquare size={80} className="opacity-5" />
@@ -187,7 +187,7 @@ export default function Achievements() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="md:col-span-1 glass-panel p-6 rounded-3xl flex flex-col justify-between hover:shadow-lg transition-all duration-300 relative group"
+            className="md:col-span-1 glass-panel p-5 sm:p-6 rounded-3xl flex flex-col justify-between hover:shadow-lg transition-all duration-300 relative group"
           >
             <div className="p-2.5 rounded-2xl bg-bg-secondary border border-border-primary text-text-secondary self-start mb-4 group-hover:scale-105 transition-transform duration-300">
               {stats[2].icon}
@@ -206,7 +206,7 @@ export default function Achievements() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="md:col-span-1 glass-panel p-6 rounded-3xl flex flex-col justify-between hover:shadow-lg transition-all duration-300 relative group"
+            className="md:col-span-1 glass-panel p-5 sm:p-6 rounded-3xl flex flex-col justify-between hover:shadow-lg transition-all duration-300 relative group"
           >
             <div className="p-2.5 rounded-2xl bg-bg-secondary border border-border-primary text-text-secondary self-start mb-4 group-hover:scale-105 transition-transform duration-300">
               {stats[3].icon}

@@ -39,19 +39,19 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-[75vh] md:min-h-[80vh] flex items-center justify-center overflow-hidden bg-transparent pt-24 pb-12"
+      className="relative min-h-[70vh] sm:min-h-[75vh] md:min-h-[80vh] flex items-center justify-center overflow-hidden bg-transparent pt-20 pb-8 sm:pt-24 sm:pb-12"
     >
       
       {/* Ambient Spotlight Colors */}
       <div className="absolute top-[20%] left-[10%] w-[350px] md:w-[600px] h-[350px] md:h-[600px] rounded-full bg-brand-accent/10 dark:bg-brand-accent/5 blur-[80px] md:blur-[120px] pointer-events-none animate-pulse-slow" />
       <div className="absolute bottom-[20%] right-[10%] w-[300px] md:w-[500px] h-[300px] md:h-[500px] rounded-full bg-brand-accent/10 dark:bg-brand-accent/5 blur-[80px] md:blur-[120px] pointer-events-none animate-pulse-slow" style={{ animationDelay: "2s" }} />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 flex flex-col items-center text-center">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 flex flex-col items-center text-center w-full">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="space-y-4 md:space-y-6 max-w-4xl"
+          className="space-y-4 md:space-y-6 max-w-4xl w-full"
         >
           {/* Badge */}
           <motion.div variants={itemVariants} className="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full border border-border-primary bg-bg-card backdrop-blur-sm shadow-sm">
@@ -64,7 +64,7 @@ export default function Hero() {
           {/* Heading */}
           <motion.h1
             variants={itemVariants}
-            className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight text-text-primary"
+            className="text-3xl sm:text-5xl md:text-7xl font-extrabold tracking-tight text-text-primary"
           >
             Kuldeep Silu
           </motion.h1>
@@ -74,10 +74,10 @@ export default function Hero() {
             variants={itemVariants}
             className="space-y-3"
           >
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-text-primary to-text-muted bg-clip-text text-transparent">
+            <h2 className="text-lg sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-text-primary to-text-muted bg-clip-text text-transparent">
               Full Stack Web Developer
             </h2>
-            <p className="text-base md:text-lg text-text-secondary max-w-2xl mx-auto leading-relaxed">
+            <p className="text-sm md:text-lg text-text-secondary max-w-2xl mx-auto leading-relaxed">
               I build high-end web applications with clean code, modern architectures, and delightful interactive details. Specializing in React, Next.js, and TypeScript.
             </p>
           </motion.div>
@@ -85,18 +85,18 @@ export default function Hero() {
           {/* CTA Buttons */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2"
+            className="flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-3 pt-2 w-full sm:w-auto max-w-xs sm:max-w-none mx-auto"
           >
             <Link
               href="#projects"
-              className="group flex items-center space-x-2 px-6 py-3 rounded-full bg-brand-accent hover:bg-brand-hover text-white font-bold shadow-md hover:shadow-lg hover:shadow-brand-accent/20 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 cursor-pointer text-sm md:text-base"
+              className="group flex items-center space-x-1.5 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full bg-brand-accent hover:bg-brand-hover text-white font-bold shadow-md hover:shadow-lg hover:shadow-brand-accent/20 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 cursor-pointer text-xs sm:text-sm md:text-base w-full sm:w-auto justify-center"
             >
               <span>View Projects</span>
               <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-200" />
             </Link>
             <Link
               href="#contact"
-              className="px-6 py-3 rounded-full border border-border-primary bg-bg-card backdrop-blur-md text-text-secondary font-semibold hover:text-brand-accent hover:border-brand-accent/30 hover:shadow-md hover:scale-[1.02] active:scale-[0.99] transition-all duration-300 cursor-pointer text-sm md:text-base"
+              className="px-5 py-2.5 sm:px-6 sm:py-3 rounded-full border border-border-primary bg-bg-card backdrop-blur-md text-text-secondary font-semibold hover:text-brand-accent hover:border-brand-accent/30 hover:shadow-md hover:scale-[1.02] active:scale-[0.99] transition-all duration-300 cursor-pointer text-xs sm:text-sm md:text-base w-full sm:w-auto text-center"
             >
               Contact Me
             </Link>

@@ -14,7 +14,7 @@ export default function Experience() {
   };
 
   return (
-    <section id="experience" className="py-16 md:py-20 bg-transparent relative overflow-hidden">
+    <section id="experience" className="py-12 md:py-20 bg-transparent relative overflow-hidden">
       <div className="absolute top-[20%] left-[5%] w-[350px] h-[350px] rounded-full bg-brand-accent/5 dark:bg-brand-accent/2 blur-[80px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
@@ -38,7 +38,7 @@ export default function Experience() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="md:col-span-2 glass-panel p-6 md:p-8 rounded-3xl relative overflow-hidden group hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+            className="md:col-span-2 glass-panel p-5 sm:p-8 rounded-3xl relative overflow-hidden group hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
           >
             <div className="absolute top-0 right-0 p-8 text-brand-accent/5 pointer-events-none">
               <Briefcase size={120} />
@@ -84,7 +84,7 @@ export default function Experience() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="md:col-span-1 glass-panel p-6 md:p-8 rounded-3xl relative overflow-hidden group hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+            className="md:col-span-1 glass-panel p-5 sm:p-8 rounded-3xl relative overflow-hidden group hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
           >
             <div className="absolute top-0 right-0 p-8 text-brand-accent/5 pointer-events-none">
               <GraduationCap size={100} />
@@ -128,7 +128,7 @@ export default function Experience() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="md:col-span-3 glass-panel p-6 md:p-8 rounded-3xl relative overflow-hidden group hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+            className="md:col-span-3 glass-panel p-5 sm:p-8 rounded-3xl relative overflow-hidden group hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
           >
             <div className="absolute top-0 right-0 p-8 text-brand-accent/5 pointer-events-none">
               <Sparkles size={140} />
