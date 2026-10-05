@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import { Code2, Globe, Layers, Server, Database, Settings, Terminal } from "lucide-react";
+import { Code2, Globe, Layers, Server, Database, Settings, Terminal, Sparkles } from "lucide-react";
 
 interface SkillItem {
   name: string;
@@ -33,6 +33,7 @@ export default function Skills() {
     { name: "Git", level: "Proficient", progress: 85, icon: <Settings size={16} /> },
     { name: "GitHub", level: "Proficient", progress: 85, icon: <Settings size={16} /> },
     { name: "VS Code", level: "Proficient", progress: 90, icon: <Settings size={16} /> },
+    { name: "Antigravity AI", level: "Proficient", progress: 95, icon: <Sparkles size={16} /> },
   ];
 
   const cardVariants: Variants = {
@@ -45,13 +46,13 @@ export default function Skills() {
   };
 
   const renderSkill = (skill: SkillItem) => (
-    <div key={skill.name} className="space-y-1.5 p-3 rounded-2xl bg-bg-secondary/40 border border-border-primary/50 hover:border-brand-accent/30 transition-colors duration-300">
+    <div key={skill.name} className="group/skill space-y-1.5 p-3.5 rounded-2xl bg-bg-secondary/40 border border-border-primary/50 hover:border-brand-accent/40 hover:bg-bg-secondary/70 hover:shadow-xs transition-all duration-200">
       <div className="flex justify-between items-center text-xs">
-        <span className="font-semibold text-text-primary flex items-center space-x-1.5">
-          <span className="text-brand-accent">{skill.icon}</span>
+        <span className="font-semibold text-text-primary flex items-center space-x-2 group-hover/skill:text-brand-accent transition-colors duration-200">
+          <span className="text-brand-accent group-hover/skill:scale-110 group-hover/skill:rotate-3 transition-transform duration-200">{skill.icon}</span>
           <span>{skill.name}</span>
         </span>
-        <span className="font-mono text-[10px] text-text-muted">{skill.level}</span>
+        <span className="font-mono text-[10px] text-text-muted uppercase tracking-wider">{skill.level}</span>
       </div>
       <div className="h-1.5 rounded-full bg-bg-secondary border border-border-primary/30 overflow-hidden">
         <motion.div
@@ -59,7 +60,7 @@ export default function Skills() {
           whileInView={{ width: `${skill.progress}%` }}
           transition={{ duration: 1, delay: 0.3 }}
           viewport={{ once: true }}
-          className="h-full rounded-full bg-brand-accent opacity-70"
+          className="h-full rounded-full bg-brand-accent opacity-75 group-hover/skill:opacity-100 transition-opacity duration-200"
         />
       </div>
     </div>
@@ -189,7 +190,7 @@ export default function Skills() {
                   Development Workflow
                 </h3>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
                 {workflowTools.map(renderSkill)}
               </div>
             </div>

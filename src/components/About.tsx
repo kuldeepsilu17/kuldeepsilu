@@ -90,13 +90,13 @@ export default function About() {
               </div>
 
               <div className="flex flex-wrap gap-2.5 pt-2">
-                <span className="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-bg-secondary border border-border-primary text-brand-accent">
+                <span className="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-bg-secondary border border-border-primary text-brand-accent hover:border-brand-accent/40 hover:-translate-y-0.5 transition-all duration-200 cursor-default">
                   ZENVIQ Digital
                 </span>
-                <span className="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-bg-secondary border border-border-primary text-text-secondary">
+                <span className="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-bg-secondary border border-border-primary text-text-secondary hover:text-text-primary hover:border-brand-accent/40 hover:-translate-y-0.5 transition-all duration-200 cursor-default">
                   Govt. Nehru Memorial College
                 </span>
-                <span className="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-bg-secondary border border-border-primary text-text-secondary">
+                <span className="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-bg-secondary border border-border-primary text-text-secondary hover:text-text-primary hover:border-brand-accent/40 hover:-translate-y-0.5 transition-all duration-200 cursor-default">
                   Full-Stack & SEO
                 </span>
               </div>
@@ -109,7 +109,7 @@ export default function About() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="glass-panel p-5 sm:p-8 rounded-3xl relative overflow-hidden group hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+            className="glass-panel p-5 sm:p-8 rounded-3xl relative overflow-hidden group hover:shadow-xl hover:border-brand-accent/30 transition-all duration-300 flex flex-col justify-between"
           >
             <div className="space-y-4">
               <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-brand-accent/10 border border-brand-accent/20">
@@ -132,9 +132,9 @@ export default function About() {
             </div>
 
             <div className="pt-6 border-t border-border-primary/50 flex flex-wrap gap-2">
-              <span className="px-2.5 py-1 rounded-full text-[10px] font-mono font-medium bg-bg-secondary text-text-secondary border border-border-primary/40">Next.js 16</span>
-              <span className="px-2.5 py-1 rounded-full text-[10px] font-mono font-medium bg-bg-secondary text-text-secondary border border-border-primary/40">AI Workflows</span>
-              <span className="px-2.5 py-1 rounded-full text-[10px] font-mono font-medium bg-bg-secondary text-text-secondary border border-border-primary/40">TypeScript</span>
+              <span className="px-2.5 py-1 rounded-full text-[10px] font-mono font-medium bg-bg-secondary text-text-secondary border border-border-primary/40 hover:border-brand-accent/40 hover:text-brand-accent hover:-translate-y-0.5 transition-all duration-200 cursor-default">Next.js 16</span>
+              <span className="px-2.5 py-1 rounded-full text-[10px] font-mono font-medium bg-bg-secondary text-text-secondary border border-border-primary/40 hover:border-brand-accent/40 hover:text-brand-accent hover:-translate-y-0.5 transition-all duration-200 cursor-default">AI Workflows</span>
+              <span className="px-2.5 py-1 rounded-full text-[10px] font-mono font-medium bg-bg-secondary text-text-secondary border border-border-primary/40 hover:border-brand-accent/40 hover:text-brand-accent hover:-translate-y-0.5 transition-all duration-200 cursor-default">TypeScript</span>
             </div>
           </motion.div>
 

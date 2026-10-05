@@ -44,9 +44,9 @@ export default function Experience() {
             href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center space-x-1.5 px-4 py-1.5 rounded-full border border-border-primary bg-bg-card hover:bg-bg-secondary text-text-secondary hover:text-brand-accent hover:border-brand-accent/30 text-xs font-semibold shadow-xs hover:scale-102 active:scale-98 transition-all duration-200"
+            className="group inline-flex items-center space-x-1.5 px-4 py-2 rounded-full border border-border-primary bg-bg-card hover:bg-bg-secondary text-text-secondary hover:text-brand-accent hover:border-brand-accent/40 text-xs font-semibold shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-[0.97] transition-all duration-200"
           >
-            <FileText size={13} />
+            <FileText size={13} className="group-hover:scale-110 transition-transform duration-200" />
             <span>Download / View Resume</span>
           </a>
         </div>
@@ -60,73 +60,77 @@ export default function Experience() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="md:col-span-3 glass-panel p-6 sm:p-8 md:p-10 rounded-3xl relative overflow-hidden group hover:shadow-xl transition-all duration-300 flex flex-col justify-between border-brand-accent/20"
+            className="md:col-span-3 glass-panel p-6 sm:p-8 md:p-10 rounded-3xl relative overflow-hidden group hover:shadow-2xl hover:border-brand-accent/30 transition-all duration-300 flex flex-col justify-between border-brand-accent/20"
           >
             <div className="absolute top-0 right-0 p-8 text-brand-accent/5 pointer-events-none">
               <Briefcase size={160} />
             </div>
 
             <div className="relative z-10 space-y-6">
-              {/* Header: Logo, Status Badge, Period & Location */}
-              <div className="flex flex-wrap items-center justify-between gap-4">
-                <div className="flex flex-wrap items-center gap-3">
+              {/* Company Header: Official Logo, Company Info, Status Badge & Timeline */}
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-border-primary/40">
+                <div className="flex items-center gap-3.5 sm:gap-4">
                   {/* Official ZENVIQ Logo Container */}
                   <a
                     href="https://www.zenviqdigital.in/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-white px-3.5 py-2 rounded-2xl border border-border-primary/80 shadow-xs inline-flex items-center justify-center hover:scale-105 transition-transform duration-200"
-                    title="Visit ZENVIQ Digital"
+                    className="group/logo relative inline-flex items-center justify-center bg-white px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-2xl border border-border-primary/80 dark:border-white/20 shadow-xs dark:shadow-[0_2px_12px_rgba(0,0,0,0.35)] transition-all duration-300 ease-out hover:scale-[1.03] hover:shadow-md hover:border-brand-accent/50 active:scale-[0.98] focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg-card shrink-0 cursor-pointer"
+                    title="Visit ZENVIQ Digital Official Website"
+                    aria-label="Visit ZENVIQ Digital Official Website (opens in new tab)"
                   >
                     <Image
                       src="/image/zenviq-logo.svg"
                       alt="ZENVIQ Digital Official Logo"
-                      width={112}
-                      height={34}
-                      className="h-6 w-auto object-contain"
+                      width={134}
+                      height={41}
+                      className="h-6 sm:h-7 w-auto object-contain transition-transform duration-300 group-hover/logo:scale-[1.02]"
+                      priority
                     />
                   </a>
-                  
-                  {/* Visual Status Indicator */}
-                  <span className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                    <span>Currently Working</span>
-                  </span>
+
+                  {/* Company Name, Live Status & Tagline */}
+                  <div className="min-w-0">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <a
+                        href="https://www.zenviqdigital.in/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-base sm:text-lg font-bold text-text-primary hover:text-brand-accent transition-colors duration-200 inline-flex items-center gap-1 group/name"
+                        aria-label="ZENVIQ Digital official website (opens in new tab)"
+                      >
+                        <span>ZENVIQ Digital</span>
+                        <ArrowUpRight size={14} className="text-text-muted group-hover/name:text-brand-accent group-hover/name:translate-x-0.5 group-hover/name:-translate-y-0.5 transition-all duration-200 shrink-0" />
+                      </a>
+                      <span className="inline-flex items-center space-x-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 shadow-2xs">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                        <span>Currently Working</span>
+                      </span>
+                    </div>
+                    <p className="text-xs sm:text-sm font-medium text-text-muted">
+                      Web • SEO • AI • Digital Solutions
+                    </p>
+                  </div>
                 </div>
-                
-                <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-text-muted">
-                  <span className="inline-flex items-center space-x-1">
-                    <MapPin size={13} className="text-text-muted" />
-                    <span>Hanumangarh, Rajasthan / India</span>
-                  </span>
-                  <span className="inline-flex items-center space-x-1 font-semibold text-text-primary">
-                    <Calendar size={13} className="text-brand-accent" />
+
+                {/* Timeline & Location Metadata */}
+                <div className="flex flex-wrap sm:flex-col sm:items-end gap-2 sm:gap-1 text-xs font-mono text-text-muted">
+                  <span className="inline-flex items-center space-x-1.5 font-semibold text-text-primary">
+                    <Calendar size={13} className="text-brand-accent shrink-0" />
                     <span>2026 — Present</span>
+                  </span>
+                  <span className="inline-flex items-center space-x-1">
+                    <MapPin size={13} className="text-text-muted shrink-0" />
+                    <span>Hanumangarh, Rajasthan / India</span>
                   </span>
                 </div>
               </div>
 
-              {/* Company & Role Details */}
-              <div className="space-y-1.5">
-                <div className="flex flex-wrap items-center gap-2">
-                  <h3 className="text-2xl sm:text-3xl font-extrabold text-text-primary tracking-tight">
-                    Full Stack Web Developer
-                  </h3>
-                </div>
-                <div className="flex flex-wrap items-center gap-2 text-sm">
-                  <a
-                    href="https://www.zenviqdigital.in/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-bold text-brand-accent hover:underline inline-flex items-center gap-1"
-                  >
-                    <span>ZENVIQ Digital</span>
-                  </a>
-                  <span className="text-text-muted/50">•</span>
-                  <span className="text-xs sm:text-sm font-medium text-text-muted">
-                    Web • SEO • AI • Digital Solutions
-                  </span>
-                </div>
+              {/* Role Title */}
+              <div className="space-y-1">
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-text-primary tracking-tight">
+                  Full Stack Web Developer
+                </h3>
               </div>
 
               {/* Company Description */}
@@ -151,8 +155,8 @@ export default function Experience() {
                 </h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm text-text-secondary">
                   {responsibilities.map((resp) => (
-                    <div key={resp} className="flex items-start space-x-2">
-                      <CheckCircle2 size={15} className="text-brand-accent mt-0.5 flex-shrink-0" />
+                    <div key={resp} className="flex items-start space-x-2 group/item">
+                      <CheckCircle2 size={15} className="text-brand-accent mt-0.5 flex-shrink-0 group-hover/item:scale-110 transition-transform duration-200" />
                       <span>{resp}</span>
                     </div>
                   ))}
@@ -163,19 +167,19 @@ export default function Experience() {
             {/* Footer Row: Tech tags & CTA */}
             <div className="pt-6 mt-6 relative z-10 border-t border-border-primary/60 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
               <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 rounded-full text-xs font-semibold bg-bg-secondary text-text-secondary border border-border-primary/50">Next.js</span>
-                <span className="px-3 py-1 rounded-full text-xs font-semibold bg-bg-secondary text-text-secondary border border-border-primary/50">React</span>
-                <span className="px-3 py-1 rounded-full text-xs font-semibold bg-bg-secondary text-text-secondary border border-border-primary/50">JavaScript</span>
-                <span className="px-3 py-1 rounded-full text-xs font-semibold bg-bg-secondary text-text-secondary border border-border-primary/50">Tailwind CSS</span>
-                <span className="px-3 py-1 rounded-full text-xs font-semibold bg-bg-secondary text-text-secondary border border-border-primary/50">SEO</span>
-                <span className="px-3 py-1 rounded-full text-xs font-semibold bg-bg-secondary text-text-secondary border border-border-primary/50">Git/GitHub</span>
+                <span className="px-3 py-1 rounded-full text-xs font-semibold bg-bg-secondary text-text-secondary border border-border-primary/50 hover:border-brand-accent/40 hover:text-brand-accent hover:-translate-y-0.5 transition-all duration-200 cursor-default">Next.js</span>
+                <span className="px-3 py-1 rounded-full text-xs font-semibold bg-bg-secondary text-text-secondary border border-border-primary/50 hover:border-brand-accent/40 hover:text-brand-accent hover:-translate-y-0.5 transition-all duration-200 cursor-default">React</span>
+                <span className="px-3 py-1 rounded-full text-xs font-semibold bg-bg-secondary text-text-secondary border border-border-primary/50 hover:border-brand-accent/40 hover:text-brand-accent hover:-translate-y-0.5 transition-all duration-200 cursor-default">JavaScript</span>
+                <span className="px-3 py-1 rounded-full text-xs font-semibold bg-bg-secondary text-text-secondary border border-border-primary/50 hover:border-brand-accent/40 hover:text-brand-accent hover:-translate-y-0.5 transition-all duration-200 cursor-default">Tailwind CSS</span>
+                <span className="px-3 py-1 rounded-full text-xs font-semibold bg-bg-secondary text-text-secondary border border-border-primary/50 hover:border-brand-accent/40 hover:text-brand-accent hover:-translate-y-0.5 transition-all duration-200 cursor-default">SEO</span>
+                <span className="px-3 py-1 rounded-full text-xs font-semibold bg-bg-secondary text-text-secondary border border-border-primary/50 hover:border-brand-accent/40 hover:text-brand-accent hover:-translate-y-0.5 transition-all duration-200 cursor-default">Git/GitHub</span>
               </div>
 
               <a
                 href="https://www.zenviqdigital.in/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center space-x-1.5 px-5 py-2.5 rounded-full bg-brand-accent hover:bg-brand-hover text-white text-xs font-bold shadow-sm hover:shadow-md hover:scale-102 active:scale-98 transition-all duration-200 cursor-pointer flex-shrink-0"
+                className="group inline-flex items-center space-x-1.5 px-5 py-2.5 rounded-full bg-brand-accent hover:bg-brand-hover text-white text-xs font-bold shadow-sm hover:shadow-lg hover:shadow-brand-accent/25 hover:scale-[1.03] active:scale-[0.97] transition-all duration-200 cursor-pointer flex-shrink-0"
               >
                 <span>Visit ZENVIQ Digital</span>
                 <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />

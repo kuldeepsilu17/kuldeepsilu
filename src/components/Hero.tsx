@@ -54,7 +54,7 @@ export default function Hero() {
           className="space-y-4 md:space-y-6 max-w-4xl w-full"
         >
           {/* Availability Badge */}
-          <motion.div variants={itemVariants} className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full border border-border-primary bg-bg-card backdrop-blur-sm shadow-sm">
+          <motion.div variants={itemVariants} className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full border border-border-primary bg-bg-card backdrop-blur-sm shadow-xs hover:border-brand-accent/30 hover:shadow-md transition-all duration-300 cursor-default">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
@@ -80,9 +80,9 @@ export default function Hero() {
             <h2 className="text-lg sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-neutral-950 via-indigo-950 to-indigo-600 dark:from-white dark:via-neutral-200 dark:to-indigo-400 bg-clip-text text-transparent">
               Full Stack Web Developer
             </h2>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border-primary bg-bg-card text-xs sm:text-sm font-medium text-text-secondary">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-border-primary bg-bg-card text-xs sm:text-sm font-medium text-text-secondary hover:border-brand-accent/30 transition-all duration-200">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-              <span>Currently @ <a href="https://www.zenviqdigital.in/" target="_blank" rel="noopener noreferrer" className="text-brand-accent hover:underline font-semibold">ZENVIQ Digital</a></span>
+              <span>Currently @ <a href="https://www.zenviqdigital.in/" target="_blank" rel="noopener noreferrer" className="text-brand-accent hover:underline font-semibold inline-flex items-center gap-0.5">ZENVIQ Digital</a></span>
             </div>
             <p className="text-sm md:text-lg text-text-secondary max-w-2xl mx-auto leading-relaxed">
               Building modern, responsive & SEO-friendly web experiences for businesses and real-world products. Focused on clean architecture, performance, and delightful user interfaces.
@@ -92,18 +92,18 @@ export default function Hero() {
           {/* CTA Buttons */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-3 pt-2 w-full sm:w-auto max-w-xs sm:max-w-none mx-auto"
+            className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2 w-full sm:w-auto max-w-xs sm:max-w-none mx-auto"
           >
             <Link
               href="#projects"
-              className="group flex items-center space-x-1.5 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full bg-brand-accent hover:bg-brand-hover text-white font-bold shadow-md hover:shadow-lg hover:shadow-brand-accent/20 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 cursor-pointer text-xs sm:text-sm md:text-base w-full sm:w-auto justify-center"
+              className="group flex items-center space-x-2 px-6 py-3 rounded-full bg-brand-accent hover:bg-brand-hover text-white font-bold shadow-md hover:shadow-xl hover:shadow-brand-accent/25 hover:scale-[1.03] active:scale-[0.97] transition-all duration-300 cursor-pointer text-xs sm:text-sm md:text-base w-full sm:w-auto justify-center"
             >
               <span>View Projects</span>
-              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-200" />
+              <ArrowRight size={16} strokeWidth={2} className="group-hover:translate-x-1.5 transition-transform duration-200" />
             </Link>
             <Link
               href="#contact"
-              className="px-5 py-2.5 sm:px-6 sm:py-3 rounded-full border border-border-primary bg-bg-card backdrop-blur-md text-text-secondary font-semibold hover:text-brand-accent hover:border-brand-accent/30 hover:shadow-md hover:scale-[1.02] active:scale-[0.99] transition-all duration-300 cursor-pointer text-xs sm:text-sm md:text-base w-full sm:w-auto text-center"
+              className="px-6 py-3 rounded-full border border-border-primary bg-bg-card/80 hover:bg-bg-secondary text-text-secondary hover:text-text-primary hover:border-brand-accent/40 hover:shadow-md hover:scale-[1.03] active:scale-[0.97] transition-all duration-300 cursor-pointer text-xs sm:text-sm md:text-base w-full sm:w-auto text-center font-semibold"
             >
               Contact Me
             </Link>

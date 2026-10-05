@@ -91,19 +91,41 @@ export default function Navbar() {
           {/* Theme Toggle */}
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-full border border-border-primary text-text-secondary hover:text-text-primary hover:bg-bg-secondary hover:border-border-hover transition-all duration-200 cursor-pointer"
+            className="relative p-2 rounded-full border border-border-primary text-text-secondary hover:text-text-primary hover:bg-bg-secondary hover:border-border-hover hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer overflow-hidden"
             aria-label="Toggle theme"
           >
-            {theme === "light" ? <Moon size={17} /> : <Sun size={17} />}
+            <AnimatePresence mode="wait" initial={false}>
+              {theme === "light" ? (
+                <motion.div
+                  key="moon"
+                  initial={{ rotate: -90, scale: 0, opacity: 0 }}
+                  animate={{ rotate: 0, scale: 1, opacity: 1 }}
+                  exit={{ rotate: 90, scale: 0, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <Moon size={16} strokeWidth={2} />
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="sun"
+                  initial={{ rotate: 90, scale: 0, opacity: 0 }}
+                  animate={{ rotate: 0, scale: 1, opacity: 1 }}
+                  exit={{ rotate: -90, scale: 0, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <Sun size={16} strokeWidth={2} className="text-amber-400" />
+                </motion.div>
+              )}
+            </AnimatePresence>
           </button>
 
           {/* CTA Button */}
           <Link
             href="#contact"
-            className="inline-flex items-center space-x-1.5 px-4 py-2 rounded-full bg-brand-accent hover:bg-brand-hover text-white text-xs font-bold shadow-sm hover:shadow-md hover:shadow-brand-accent/20 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 cursor-pointer"
+            className="group inline-flex items-center space-x-1.5 px-4 py-2 rounded-full bg-brand-accent hover:bg-brand-hover text-white text-xs font-bold shadow-sm hover:shadow-md hover:shadow-brand-accent/25 hover:scale-[1.03] active:scale-[0.97] transition-all duration-200 cursor-pointer"
           >
             <span className="text-white">Let&apos;s Talk</span>
-            <span className="text-xs text-white font-bold">→</span>
+            <span className="text-xs text-white font-bold group-hover:translate-x-1 transition-transform duration-200">→</span>
           </Link>
         </div>
 
@@ -111,18 +133,18 @@ export default function Navbar() {
         <div className="flex md:hidden items-center space-x-2.5">
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-full border border-border-primary text-text-secondary hover:text-text-primary hover:bg-bg-secondary transition-all duration-200"
+            className="p-2 rounded-full border border-border-primary text-text-secondary hover:text-text-primary hover:bg-bg-secondary active:scale-95 transition-all duration-200"
             aria-label="Toggle theme"
           >
-            {theme === "light" ? <Moon size={16} /> : <Sun size={16} />}
+            {theme === "light" ? <Moon size={16} strokeWidth={2} /> : <Sun size={16} strokeWidth={2} className="text-amber-400" />}
           </button>
           
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="p-2 text-text-secondary hover:text-text-primary"
+            className="p-2 text-text-secondary hover:text-text-primary active:scale-95 transition-transform duration-200"
             aria-label="Toggle menu"
           >
-            {isOpen ? <X size={22} /> : <Menu size={22} />}
+            {isOpen ? <X size={22} strokeWidth={2} /> : <Menu size={22} strokeWidth={2} />}
           </button>
         </div>
       </nav>

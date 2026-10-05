@@ -95,20 +95,20 @@ export default function Achievements() {
               whileInView="visible"
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="glass-panel p-6 rounded-3xl flex flex-col justify-between hover:shadow-lg transition-all duration-300 relative group"
+              className="glass-panel p-6 rounded-3xl flex flex-col justify-between hover:shadow-xl hover:border-brand-accent/30 transition-all duration-300 relative group cursor-default"
             >
               <div className="flex items-center justify-between mb-4">
-                <div className="p-2.5 rounded-2xl bg-bg-secondary border border-border-primary text-text-secondary group-hover:scale-105 transition-transform duration-300">
+                <div className="p-2.5 rounded-2xl bg-bg-secondary border border-border-primary text-text-secondary group-hover:scale-110 group-hover:rotate-6 group-hover:border-brand-accent/30 group-hover:bg-brand-soft transition-all duration-300">
                   {item.icon}
                 </div>
-                <span className="text-[10px] font-mono text-text-muted uppercase tracking-wider">
+                <span className="text-[10px] font-mono text-text-muted uppercase tracking-wider group-hover:text-brand-accent transition-colors duration-200">
                   0{idx + 1}
                 </span>
               </div>
               
               <div className="space-y-1.5">
                 <AnimatedNumber value={item.value} suffix={item.suffix} />
-                <h3 className="text-sm font-bold text-text-primary">
+                <h3 className="text-sm font-bold text-text-primary group-hover:text-brand-accent transition-colors duration-200">
                   {item.label}
                 </h3>
                 <p className="text-xs text-text-muted leading-relaxed">

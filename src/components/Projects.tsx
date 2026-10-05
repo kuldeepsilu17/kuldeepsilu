@@ -192,16 +192,16 @@ export default function Projects() {
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center space-x-1.5 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full bg-brand-accent hover:bg-brand-hover text-white shadow-md hover:shadow-lg hover:shadow-brand-accent/20 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 text-xs sm:text-sm font-bold cursor-pointer"
+                    className="group/btn inline-flex items-center space-x-2 px-6 py-3 rounded-full bg-brand-accent hover:bg-brand-hover text-white shadow-md hover:shadow-xl hover:shadow-brand-accent/25 hover:scale-[1.03] active:scale-[0.97] transition-all duration-300 text-xs sm:text-sm font-bold cursor-pointer"
                   >
                     <span>Live Demo</span>
-                    <ExternalLink size={14} />
+                    <ExternalLink size={14} className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform duration-200" />
                   </a>
                   <button
                     onClick={() => setSelectedProject(project)}
-                    className="inline-flex items-center space-x-1.5 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full border border-border-primary bg-bg-card text-text-secondary hover:text-brand-accent hover:border-brand-accent/30 hover:shadow-md hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 text-xs sm:text-sm font-semibold cursor-pointer"
+                    className="group/btn inline-flex items-center space-x-2 px-6 py-3 rounded-full border border-border-primary bg-bg-card hover:bg-bg-secondary text-text-secondary hover:text-brand-accent hover:border-brand-accent/40 hover:shadow-md hover:scale-[1.03] active:scale-[0.97] transition-all duration-300 text-xs sm:text-sm font-semibold cursor-pointer"
                   >
-                    <Sparkles size={14} />
+                    <Sparkles size={14} className="group-hover/btn:rotate-12 group-hover/btn:scale-110 group-hover/btn:text-brand-accent transition-all duration-200" />
                     <span>View Case Study</span>
                   </button>
                   {project.github && (
@@ -209,9 +209,9 @@ export default function Projects() {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center space-x-1.5 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full border border-border-primary bg-transparent text-text-secondary hover:text-brand-accent hover:border-brand-accent/30 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 text-xs sm:text-sm font-semibold"
+                      className="group/btn inline-flex items-center space-x-1.5 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full border border-border-primary bg-transparent text-text-secondary hover:text-brand-accent hover:border-brand-accent/30 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 text-xs sm:text-sm font-semibold"
                     >
-                      <Code size={14} />
+                      <Code size={14} className="group-hover/btn:scale-110 transition-transform duration-200" />
                       <span>Source</span>
                     </a>
                   )}
