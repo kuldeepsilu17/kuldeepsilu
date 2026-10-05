@@ -437,7 +437,7 @@ export default function Contact() {
                       name="name"
                       value={formState.name}
                       onChange={handleChange}
-                      placeholder="e.g. Name"
+                      placeholder="e.g. Rahul Sharma"
                       required
                       className="w-full px-4 py-3 rounded-2xl bg-bg-secondary/70 border border-border-primary text-text-primary placeholder-text-muted/60 focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/20 focus:bg-bg-card transition-all duration-200 text-sm"
                     />
@@ -452,7 +452,7 @@ export default function Contact() {
                       name="email"
                       value={formState.email}
                       onChange={handleChange}
-                      placeholder="info@example.com"
+                      placeholder="you@company.com"
                       required
                       className="w-full px-4 py-3 rounded-2xl bg-bg-secondary/70 border border-border-primary text-text-primary placeholder-text-muted/60 focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/20 focus:bg-bg-card transition-all duration-200 text-sm"
                     />
@@ -469,7 +469,7 @@ export default function Contact() {
                     name="subject"
                     value={formState.subject}
                     onChange={handleChange}
-                    placeholder="Project Inquiry / Collaboration / Job Opportunity"
+                    placeholder="Project inquiry / Collaboration / Job opportunity"
                     required
                     className="w-full px-4 py-3 rounded-2xl bg-bg-secondary/70 border border-border-primary text-text-primary placeholder-text-muted/60 focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/20 focus:bg-bg-card transition-all duration-200 text-sm"
                   />
@@ -485,7 +485,7 @@ export default function Contact() {
                     rows={5}
                     value={formState.message}
                     onChange={handleChange}
-                    placeholder="Tell me about your project, timeline, or requirements..."
+                    placeholder="Tell me about your project, goals, timeline, or opportunity..."
                     required
                     className="w-full px-4 py-3 rounded-2xl bg-bg-secondary/70 border border-border-primary text-text-primary placeholder-text-muted/60 focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/20 focus:bg-bg-card transition-all duration-200 text-sm resize-none"
                   />
