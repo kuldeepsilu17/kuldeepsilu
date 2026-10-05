@@ -1,65 +1,59 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
-import { motion, useInView, Variants } from "framer-motion";
-import { Award, CheckCircle, Code2, Hourglass, MessageSquare } from "lucide-react";
+import { motion, Variants, useInView, useMotionValue, useTransform, animate } from "framer-motion";
+import { CheckCircle2, Code2, FolderGit2, Calendar, Sparkles, Terminal } from "lucide-react";
+import { useEffect, useRef } from "react";
 
 function AnimatedNumber({ value, suffix = "" }: { value: number; suffix?: string }) {
-  const [count, setCount] = useState(0);
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-100px" });
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (latest) => Math.round(latest));
 
   useEffect(() => {
-    if (!isInView) return;
-
-    const start = 0;
-    const end = value;
-    const duration = 2000;
-    const startTime = performance.now();
-
-    const updateCount = (currentTime: number) => {
-      const elapsed = currentTime - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      
-      const easeProgress = progress * (2 - progress);
-      
-      const currentCount = Math.floor(easeProgress * (end - start) + start);
-      setCount(currentCount);
-
-      if (progress < 1) {
-        requestAnimationFrame(updateCount);
-      }
-    };
-
-    requestAnimationFrame(updateCount);
-  }, [isInView, value]);
+    if (inView) {
+      const controls = animate(count, value, { duration: 2, ease: "easeOut" });
+      return controls.stop;
+    }
+  }, [inView, value, count]);
 
   return (
-    <span ref={ref} className="font-mono text-3xl sm:text-4xl font-semibold text-text-primary">
-      {count}
+    <span ref={ref} className="font-mono text-3xl sm:text-4xl font-extrabold text-text-primary tracking-tight">
+      <motion.span>{rounded}</motion.span>
       {suffix}
     </span>
   );
 }
 
 export default function Achievements() {
-  const stats = [
-    { label: "Completed Projects", value: 12, suffix: "+", icon: <CheckCircle className="text-emerald-500" size={16} /> },
-    { label: "Technologies Mastered", value: 14, suffix: "", icon: <Code2 className="text-indigo-500" size={16} /> },
-    { label: "GitHub Commits", value: 450, suffix: "+", icon: <Award className="text-violet-500" size={16} /> },
-    { label: "Coding Practice Hours", value: 1500, suffix: "+", icon: <Hourglass className="text-pink-500" size={16} /> },
-  ];
-
-  const testimonials = [
+  const milestones = [
     {
-      quote: "Kuldeep's training performance is exemplary. His quick grasp of complex full stack paradigms and clean CSS layout capabilities is highly professional.",
-      author: "Ducat Lead Instructor",
-      role: "Ducat Training Center",
+      label: "Featured Project",
+      value: 1,
+      suffix: "+",
+      caption: "Healthcare & business platforms",
+      icon: <FolderGit2 className="text-brand-accent" size={18} />
     },
     {
-      quote: "Demonstrates high skill in problem-solving and structured algorithms. Kuldeep's portfolio structure is visually outstanding and responsive.",
-      author: "Academic Supervisor",
-      role: "Gov. Nehru Memorial College",
+      label: "Core Technologies",
+      value: 6,
+      suffix: "+",
+      caption: "React, Next.js, Node, MySQL & Tailwind",
+      icon: <Code2 className="text-indigo-500" size={18} />
+    },
+    {
+      label: "Developer Portfolio",
+      value: 1,
+      suffix: "",
+      caption: "Polished responsive digital presence",
+      icon: <CheckCircle2 className="text-emerald-500" size={18} />
+    },
+    {
+      label: "Building for Web",
+      value: 2024,
+      suffix: "",
+      caption: "Started hands-on full-stack engineering",
+      icon: <Calendar className="text-violet-500" size={18} />
     },
   ];
 
@@ -84,142 +78,74 @@ export default function Achievements() {
             05 / Milestones
           </p>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-text-primary">
-            Stats & Testimonials
+            Key Milestones
           </h2>
+          <p className="text-text-secondary mt-3 max-w-xl mx-auto text-sm md:text-base leading-relaxed">
+            Honest, verifiable milestones reflecting dedicated web development practice and real-world project building.
+          </p>
         </div>
 
-        {/* Bento Grid: 4-Column Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8 max-w-5xl mx-auto">
-          
-          {/* Row 1, Card 1: Completed Projects (col-span-1) */}
-          <motion.div
-            variants={cardVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="md:col-span-1 glass-panel p-5 sm:p-6 rounded-3xl flex flex-col justify-between hover:shadow-lg transition-all duration-300 relative group"
-          >
-            <div className="p-2.5 rounded-2xl bg-bg-secondary border border-border-primary text-text-secondary self-start mb-4 group-hover:scale-105 transition-transform duration-300">
-              {stats[0].icon}
-            </div>
-            <div>
-              <AnimatedNumber value={stats[0].value} suffix={stats[0].suffix} />
-              <p className="text-xs font-semibold text-text-muted mt-2">
-                {stats[0].label}
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Row 1, Card 2: Tech Mastered (col-span-1) */}
-          <motion.div
-            variants={cardVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="md:col-span-1 glass-panel p-5 sm:p-6 rounded-3xl flex flex-col justify-between hover:shadow-lg transition-all duration-300 relative group"
-          >
-            <div className="p-2.5 rounded-2xl bg-bg-secondary border border-border-primary text-text-secondary self-start mb-4 group-hover:scale-105 transition-transform duration-300">
-              {stats[1].icon}
-            </div>
-            <div>
-              <AnimatedNumber value={stats[1].value} suffix={stats[1].suffix} />
-              <p className="text-xs font-semibold text-text-muted mt-2">
-                {stats[1].label}
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Row 1, Card 3: Testimonial 1 (col-span-2) */}
-          <motion.div
-            variants={cardVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="md:col-span-2 glass-panel p-5 sm:p-8 rounded-3xl relative overflow-hidden flex flex-col justify-between group hover:shadow-xl transition-all duration-300"
-          >
-            <div className="absolute top-0 right-0 p-8 text-text-muted pointer-events-none">
-              <MessageSquare size={80} className="opacity-5" />
-            </div>
-            <div className="relative z-10 space-y-4">
-              <p className="text-text-secondary italic leading-relaxed text-xs sm:text-sm">
-                &ldquo;{testimonials[0].quote}&rdquo;
-              </p>
-              <div>
-                <h4 className="font-bold text-sm text-text-primary tracking-tight">
-                  {testimonials[0].author}
-                </h4>
-                <p className="text-[10px] font-mono text-text-muted uppercase tracking-widest mt-0.5">
-                  {testimonials[0].role}
+        {/* Bento Grid: 4-Column Metric Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          {milestones.map((item, idx) => (
+            <motion.div
+              key={item.label}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1 }}
+              className="glass-panel p-6 rounded-3xl flex flex-col justify-between hover:shadow-lg transition-all duration-300 relative group"
+            >
+              <div className="flex items-center justify-between mb-4">
+                <div className="p-2.5 rounded-2xl bg-bg-secondary border border-border-primary text-text-secondary group-hover:scale-105 transition-transform duration-300">
+                  {item.icon}
+                </div>
+                <span className="text-[10px] font-mono text-text-muted uppercase tracking-wider">
+                  0{idx + 1}
+                </span>
+              </div>
+              
+              <div className="space-y-1.5">
+                <AnimatedNumber value={item.value} suffix={item.suffix} />
+                <h3 className="text-sm font-bold text-text-primary">
+                  {item.label}
+                </h3>
+                <p className="text-xs text-text-muted leading-relaxed">
+                  {item.caption}
                 </p>
               </div>
-            </div>
-          </motion.div>
-
-          {/* Row 2, Card 4: Testimonial 2 (col-span-2) */}
-          <motion.div
-            variants={cardVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="md:col-span-2 glass-panel p-5 sm:p-8 rounded-3xl relative overflow-hidden flex flex-col justify-between group hover:shadow-xl transition-all duration-300"
-          >
-            <div className="absolute top-0 right-0 p-8 text-text-muted pointer-events-none">
-              <MessageSquare size={80} className="opacity-5" />
-            </div>
-            <div className="relative z-10 space-y-4">
-              <p className="text-text-secondary italic leading-relaxed text-xs sm:text-sm">
-                &ldquo;{testimonials[1].quote}&rdquo;
-              </p>
-              <div>
-                <h4 className="font-bold text-sm text-text-primary tracking-tight">
-                  {testimonials[1].author}
-                </h4>
-                <p className="text-[10px] font-mono text-text-muted uppercase tracking-widest mt-0.5">
-                  {testimonials[1].role}
-                </p>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Row 2, Card 5: GitHub Commits (col-span-1) */}
-          <motion.div
-            variants={cardVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="md:col-span-1 glass-panel p-5 sm:p-6 rounded-3xl flex flex-col justify-between hover:shadow-lg transition-all duration-300 relative group"
-          >
-            <div className="p-2.5 rounded-2xl bg-bg-secondary border border-border-primary text-text-secondary self-start mb-4 group-hover:scale-105 transition-transform duration-300">
-              {stats[2].icon}
-            </div>
-            <div>
-              <AnimatedNumber value={stats[2].value} suffix={stats[2].suffix} />
-              <p className="text-xs font-semibold text-text-muted mt-2">
-                {stats[2].label}
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Row 2, Card 6: Coding Hours (col-span-1) */}
-          <motion.div
-            variants={cardVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="md:col-span-1 glass-panel p-5 sm:p-6 rounded-3xl flex flex-col justify-between hover:shadow-lg transition-all duration-300 relative group"
-          >
-            <div className="p-2.5 rounded-2xl bg-bg-secondary border border-border-primary text-text-secondary self-start mb-4 group-hover:scale-105 transition-transform duration-300">
-              {stats[3].icon}
-            </div>
-            <div>
-              <AnimatedNumber value={stats[3].value} suffix={stats[3].suffix} />
-              <p className="text-xs font-semibold text-text-muted mt-2">
-                {stats[3].label}
-              </p>
-            </div>
-          </motion.div>
-
+            </motion.div>
+          ))}
         </div>
+
+        {/* Commitment Highlight Card */}
+        <motion.div
+          variants={cardVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="mt-8 max-w-6xl mx-auto glass-panel p-6 sm:p-8 rounded-3xl relative overflow-hidden flex flex-col md:flex-row items-start md:items-center justify-between gap-6 hover:shadow-xl transition-all duration-300"
+        >
+          <div className="space-y-2 max-w-2xl">
+            <div className="flex items-center space-x-2 text-xs font-bold tracking-wider text-brand-accent uppercase">
+              <Sparkles size={14} className="animate-pulse" />
+              <span>Engineering Standard</span>
+            </div>
+            <h4 className="text-lg sm:text-xl font-bold text-text-primary">
+              Committed to Modern Best Practices
+            </h4>
+            <p className="text-text-secondary text-sm leading-relaxed">
+              Every project is constructed with production standards in mind: semantic HTML, responsive viewport engineering, accessible contrast, optimized asset delivery, and maintainable TypeScript code.
+            </p>
+          </div>
+
+          <div className="flex items-center space-x-2 text-xs font-mono text-text-secondary bg-bg-secondary px-4 py-2.5 rounded-2xl border border-border-primary shrink-0">
+            <Terminal size={14} className="text-brand-accent" />
+            <span>Ready for Production</span>
+          </div>
+        </motion.div>
+
       </div>
     </section>
   );

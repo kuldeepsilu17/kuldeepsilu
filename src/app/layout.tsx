@@ -1,25 +1,46 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "@/context/ThemeContext";
 import CustomCursor from "@/components/CustomCursor";
 import { Mail, Phone } from "lucide-react";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
   title: "Kuldeep Silu | Full Stack Web Developer",
-  description: "Portfolio of Kuldeep Silu, a modern Full Stack Web Developer specializing in React, Next.js, and TypeScript.",
-  keywords: ["Kuldeep Silu", "Full Stack Developer", "Web Developer", "Next.js", "React Portfolio"],
+  description: "Kuldeep Silu is a Full Stack Web Developer building modern, responsive and SEO-friendly web experiences with React, Next.js, Node.js and modern web technologies.",
+  keywords: [
+    "Kuldeep Silu",
+    "Full Stack Web Developer",
+    "Frontend Developer",
+    "React Developer",
+    "Next.js Portfolio",
+    "Web Developer India",
+    "JavaScript Developer"
+  ],
+  authors: [{ name: "Kuldeep Silu", url: "https://kuldeepsilu.vercel.app/" }],
+  creator: "Kuldeep Silu",
+  metadataBase: new URL("https://kuldeepsilu.vercel.app"),
+  alternates: {
+    canonical: "https://kuldeepsilu.vercel.app/",
+  },
+  openGraph: {
+    title: "Kuldeep Silu | Full Stack Web Developer",
+    description: "Kuldeep Silu is a Full Stack Web Developer building modern, responsive and SEO-friendly web experiences with React, Next.js, Node.js and modern web technologies.",
+    url: "https://kuldeepsilu.vercel.app/",
+    siteName: "Kuldeep Silu Portfolio",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kuldeep Silu | Full Stack Web Developer",
+    description: "Kuldeep Silu is a Full Stack Web Developer building modern, responsive and SEO-friendly web experiences with React, Next.js, Node.js and modern web technologies.",
+    creator: "@kuldeepsilu",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -27,10 +48,32 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Kuldeep Silu",
+    url: "https://kuldeepsilu.vercel.app/",
+    jobTitle: "Full Stack Web Developer",
+    worksFor: {
+      "@type": "Organization",
+      name: "ZENVIQ Digital",
+      url: "https://www.zenviqdigital.in/"
+    },
+    sameAs: [
+      "https://github.com/kuldeepsilu17",
+      "https://linkedin.com/in/kuldeep-silu-0b056539b"
+    ],
+    knowsAbout: ["React", "Next.js", "JavaScript", "TypeScript", "Node.js", "Express.js", "Tailwind CSS", "MySQL", "SEO"]
+  };
+
   return (
-    <html lang="en" className="scroll-smooth light">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -48,7 +91,8 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white dark:bg-[#030303] text-neutral-900 dark:text-neutral-100 min-h-screen flex flex-col`}
+        suppressHydrationWarning
+        className="font-sans antialiased min-h-screen flex flex-col"
       >
         <ThemeProvider>
           <CustomCursor />

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import { BookOpen, Brain, Code, Cpu } from "lucide-react";
+import { BookOpen, Brain, Code } from "lucide-react";
 import Image from "next/image";
 
 export default function About() {
@@ -15,10 +15,10 @@ export default function About() {
   };
 
   const progressSkills = [
-    { name: "Frontend Development", value: 90 },
-    { name: "Backend Development", value: 75 },
-    { name: "Database Systems", value: 80 },
-    { name: "Problem Solving", value: 85 },
+    { name: "Frontend Development", level: "Proficient", value: 85 },
+    { name: "Backend Development", level: "Familiar", value: 70 },
+    { name: "Database Systems", level: "Familiar", value: 65 },
+    { name: "Problem Solving", level: "Strong", value: 80 },
   ];
 
   return (
@@ -46,15 +46,16 @@ export default function About() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="md:col-span-1 glass-panel p-4 md:p-6 rounded-3xl relative overflow-hidden group hover:shadow-xl transition-all duration-300 flex items-center justify-center min-h-[220px] md:min-h-[300px]"
+            className="md:col-span-1 glass-panel p-4 md:p-6 rounded-3xl relative overflow-hidden group hover:shadow-xl transition-all duration-300 flex items-center justify-center min-h-[260px] md:min-h-[320px]"
           >
-            <div className="relative w-full h-full rounded-2xl overflow-hidden aspect-square">
+            <div className="relative w-full h-full rounded-2xl overflow-hidden aspect-square bg-bg-secondary border border-border-primary/50">
               <Image
-                src="/image/project-manager.jpeg"
+                src="/image/kuldeep-silu.jpg"
                 alt="Kuldeep Silu"
                 fill
                 sizes="(max-width: 768px) 100vw, 33vw"
-                className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out grayscale group-hover:grayscale-0"
+                className="object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
+                priority
               />
             </div>
           </motion.div>
@@ -78,70 +79,66 @@ export default function About() {
                   <span>Academic Journey</span>
                 </span>
                 <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-text-primary leading-tight">
-                  Pursuing BCA & Exploring AI Integrations
+                  BCA Student & Full Stack Web Developer
                 </h3>
-                <p className="text-text-secondary leading-relaxed">
-                  Currently a Bachelor of Computer Applications (BCA) student at Government Nehru Memorial College (MGSU). I combine academic concepts of computer science with practical, modern industry frameworks.
+                <p className="text-text-secondary leading-relaxed text-sm md:text-base">
+                  Currently pursuing a Bachelor of Computer Applications (BCA) at Government Nehru Memorial College (MGSU). I currently work as a Full Stack Web Developer at <a href="https://www.zenviqdigital.in/" target="_blank" rel="noopener noreferrer" className="text-brand-accent hover:underline font-semibold">ZENVIQ Digital</a>, where I contribute to real-world websites and digital solutions.
                 </p>
-                <p className="text-text-secondary leading-relaxed">
-                  I love building scalable, interactive user interfaces and exploring how artificial intelligence can make products smarter and more delightful.
+                <p className="text-text-secondary leading-relaxed text-sm md:text-base">
+                  Passionate about clean code architecture, intuitive UI/UX design, SEO best practices, and exploring AI-assisted web workflows to engineer reliable digital products.
                 </p>
               </div>
 
-              <div className="flex flex-wrap gap-3 pt-4">
-                <span className="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-bg-secondary border border-border-primary text-text-secondary">
-                  Gov. Nehru Memorial College
+              <div className="flex flex-wrap gap-2.5 pt-2">
+                <span className="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-bg-secondary border border-border-primary text-brand-accent">
+                  ZENVIQ Digital
                 </span>
                 <span className="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-bg-secondary border border-border-primary text-text-secondary">
-                  MGSU Affiliated
+                  Govt. Nehru Memorial College
+                </span>
+                <span className="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-bg-secondary border border-border-primary text-text-secondary">
+                  Full-Stack & SEO
                 </span>
               </div>
             </div>
           </motion.div>
 
-          {/* Box 3: Quick Highlights */}
+          {/* Box 3: Currently Building Card */}
           <motion.div
             variants={cardVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="glass-panel p-5 sm:p-8 md:p-10 rounded-3xl relative overflow-hidden group hover:shadow-xl transition-all duration-300"
+            className="glass-panel p-5 sm:p-8 rounded-3xl relative overflow-hidden group hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
           >
-            <div className="absolute top-0 right-0 p-8 text-text-muted pointer-events-none">
-              <Cpu size={120} className="opacity-10" />
+            <div className="space-y-4">
+              <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-brand-accent/10 border border-brand-accent/20">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-accent opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-accent"></span>
+                </span>
+                <span className="text-[10px] font-bold tracking-wider text-brand-accent uppercase">
+                  Learning & Building
+                </span>
+              </div>
+              
+              <h3 className="text-lg sm:text-xl font-bold text-text-primary">
+                Currently Building
+              </h3>
+              
+              <p className="text-text-secondary text-sm leading-relaxed">
+                Exploring AI-powered web applications and modern full-stack architectures. Experimenting with intelligent agents, interactive audio engines, and next-gen developer tooling.
+              </p>
             </div>
 
-            <div className="relative z-10 flex flex-col h-full justify-between space-y-6">
-              <div className="space-y-4">
-                <span className="inline-flex items-center space-x-2 text-xs font-bold tracking-wider text-brand-accent uppercase">
-                  <Code size={14} />
-                  <span>My Focus</span>
-                </span>
-                <h3 className="text-xl font-bold text-text-primary leading-tight">
-                  Premium Web Systems
-                </h3>
-                <p className="text-text-secondary leading-relaxed">
-                  Creating clean layouts, responsive grid patterns, interactive visual details, and secure database backends.
-                </p>
-              </div>
-              <ul className="space-y-3 font-semibold text-sm text-text-secondary">
-                <li className="flex items-center space-x-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-brand-accent animate-pulse" />
-                  <span>React & Next.js Core</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-brand-accent animate-pulse" />
-                  <span>Node.js / Express Architecture</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-brand-accent animate-pulse" />
-                  <span>Tailwind CSS & Animations</span>
-                </li>
-              </ul>
+            <div className="pt-6 border-t border-border-primary/50 flex flex-wrap gap-2">
+              <span className="px-2.5 py-1 rounded-full text-[10px] font-mono font-medium bg-bg-secondary text-text-secondary border border-border-primary/40">Next.js 16</span>
+              <span className="px-2.5 py-1 rounded-full text-[10px] font-mono font-medium bg-bg-secondary text-text-secondary border border-border-primary/40">AI Workflows</span>
+              <span className="px-2.5 py-1 rounded-full text-[10px] font-mono font-medium bg-bg-secondary text-text-secondary border border-border-primary/40">TypeScript</span>
             </div>
           </motion.div>
 
-          {/* Box 4: Skills Indicators */}
+          {/* Box 4: Skills & Core Focus */}
           <motion.div
             variants={cardVariants}
             initial="hidden"
@@ -151,21 +148,25 @@ export default function About() {
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center">
               <div className="space-y-4">
+                <span className="inline-flex items-center space-x-2 text-xs font-bold tracking-wider text-brand-accent uppercase">
+                  <Code size={14} />
+                  <span>Technical Foundations</span>
+                </span>
                 <h3 className="text-xl md:text-2xl font-bold text-text-primary">
-                  Technical Core Capacities
+                  Core Engineering Strengths
                 </h3>
-                <p className="text-text-secondary leading-relaxed">
-                  I dedicate hours every day to mastering code structures. From clean frontends using Next.js to relational databases using MySQL, I construct solid full-stack systems.
+                <p className="text-text-secondary leading-relaxed text-sm">
+                  Focused on scalable web architectures, clean responsive component libraries, secure server routes, and fast-loading web applications.
                 </p>
               </div>
 
               {/* Progress bars with scroll animations */}
-              <div className="space-y-5">
+              <div className="space-y-4">
                 {progressSkills.map((skill, index) => (
-                  <div key={skill.name} className="space-y-2">
-                    <div className="flex justify-between items-center text-sm">
+                  <div key={skill.name} className="space-y-1.5">
+                    <div className="flex justify-between items-center text-xs">
                       <span className="font-semibold text-text-primary">{skill.name}</span>
-                      <span className="font-mono text-xs text-text-muted">{skill.value}%</span>
+                      <span className="font-mono text-[10px] text-text-muted uppercase tracking-wider">{skill.level}</span>
                     </div>
                     <div className="h-2 rounded-full bg-bg-secondary border border-border-primary/50 overflow-hidden">
                       <motion.div

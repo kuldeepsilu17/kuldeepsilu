@@ -2,7 +2,7 @@
 
 import { motion, Variants } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   const containerVariants: Variants = {
@@ -53,11 +53,14 @@ export default function Hero() {
           animate="visible"
           className="space-y-4 md:space-y-6 max-w-4xl w-full"
         >
-          {/* Badge */}
-          <motion.div variants={itemVariants} className="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full border border-border-primary bg-bg-card backdrop-blur-sm shadow-sm">
-            <Sparkles size={14} className="text-brand-accent animate-pulse" />
-            <span className="text-[10px] sm:text-xs font-semibold tracking-wider text-text-secondary uppercase">
-              Available for Freelance & Full-time Roles
+          {/* Availability Badge */}
+          <motion.div variants={itemVariants} className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full border border-border-primary bg-bg-card backdrop-blur-sm shadow-sm">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span className="text-[11px] sm:text-xs font-semibold tracking-wide text-text-secondary">
+              Available for Freelance & Full-time Opportunities
             </span>
           </motion.div>
 
@@ -74,11 +77,15 @@ export default function Hero() {
             variants={itemVariants}
             className="space-y-3"
           >
-            <h2 className="text-lg sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-text-primary to-text-muted bg-clip-text text-transparent">
+            <h2 className="text-lg sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-neutral-950 via-indigo-950 to-indigo-600 dark:from-white dark:via-neutral-200 dark:to-indigo-400 bg-clip-text text-transparent">
               Full Stack Web Developer
             </h2>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border-primary bg-bg-card text-xs sm:text-sm font-medium text-text-secondary">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+              <span>Currently @ <a href="https://www.zenviqdigital.in/" target="_blank" rel="noopener noreferrer" className="text-brand-accent hover:underline font-semibold">ZENVIQ Digital</a></span>
+            </div>
             <p className="text-sm md:text-lg text-text-secondary max-w-2xl mx-auto leading-relaxed">
-              I build high-end web applications with clean code, modern architectures, and delightful interactive details. Specializing in React, Next.js, and TypeScript.
+              Building modern, responsive & SEO-friendly web experiences for businesses and real-world products. Focused on clean architecture, performance, and delightful user interfaces.
             </p>
           </motion.div>
 

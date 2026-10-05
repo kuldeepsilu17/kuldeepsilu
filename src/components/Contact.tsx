@@ -24,7 +24,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-16 md:py-20 bg-transparent relative overflow-hidden">
+    <section id="contact" className="py-16 md:py-24 bg-transparent relative overflow-hidden">
       <div className="absolute top-[20%] left-[5%] w-[350px] h-[350px] rounded-full bg-brand-accent/5 dark:bg-brand-accent/2 blur-[80px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
@@ -34,30 +34,31 @@ export default function Contact() {
           <p className="text-xs font-bold tracking-widest text-brand-accent uppercase mb-2">
             06 / Connect
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-text-primary">
-            Get In Touch
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-text-primary">
+            Let&apos;s build something useful.
           </h2>
           <p className="text-text-secondary mt-3 max-w-xl mx-auto text-sm md:text-base leading-relaxed">
-            Have a project in mind, need a full-stack developer, or just want to connect? Hit the form below.
+            I&apos;m open to freelance projects, collaborations, internships and full-time opportunities.
           </p>
         </div>
 
         {/* Contact Split Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start max-w-6xl mx-auto">
           
-          {/* Quick Info Box */}
-          <div className="lg:col-span-5 space-y-8">
-            <div className="glass-panel p-5 sm:p-8 rounded-3xl space-y-6 hover:shadow-lg transition-all duration-300">
-              <h3 className="text-xl sm:text-2xl font-bold text-text-primary tracking-tight">
+          {/* Quick Info & QR Box */}
+          <div className="lg:col-span-5 space-y-6">
+            {/* Contact Info */}
+            <div className="glass-panel p-6 sm:p-8 rounded-3xl space-y-6 hover:shadow-lg transition-all duration-300">
+              <h3 className="text-xl font-bold text-text-primary tracking-tight">
                 Contact Details
               </h3>
               
-              <div className="space-y-4 font-semibold text-sm md:text-base text-text-secondary">
+              <div className="space-y-4 font-semibold text-sm text-text-secondary">
                 <div className="flex items-center space-x-3.5">
                   <div className="p-2.5 rounded-2xl bg-bg-secondary border border-border-primary text-text-secondary">
                     <Mail size={16} />
                   </div>
-                  <a href="mailto:kuldeepsilu7@gmail.com" className="hover:text-brand-accent transition-colors duration-200">
+                  <a href="mailto:kuldeepsilu7@gmail.com" className="hover:text-brand-accent transition-colors duration-200 break-all">
                     kuldeepsilu7@gmail.com
                   </a>
                 </div>
@@ -76,36 +77,79 @@ export default function Contact() {
                   <span>Hanumangarh, Rajasthan, India</span>
                 </div>
               </div>
+
+              {/* Social Links */}
+              <div className="pt-4 border-t border-border-primary/50">
+                <h4 className="text-xs font-bold text-text-muted uppercase tracking-wider mb-3">
+                  Online Profiles
+                </h4>
+                <div className="flex space-x-3">
+                  <a
+                    href="https://github.com/kuldeepsilu17"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 rounded-2xl bg-bg-secondary border border-border-primary text-text-secondary hover:text-brand-accent hover:border-brand-accent/30 hover:scale-105 transition-all duration-200"
+                    aria-label="GitHub"
+                  >
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
+                    </svg>
+                  </a>
+                  <a
+                    href="https://linkedin.com/in/kuldeep-silu-0b056539b"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 rounded-2xl bg-bg-secondary border border-border-primary text-text-secondary hover:text-brand-accent hover:border-brand-accent/30 hover:scale-105 transition-all duration-200"
+                    aria-label="LinkedIn"
+                  >
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path fillRule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clipRule="evenodd" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
             </div>
 
-            {/* Social Links Box */}
-            <div className="glass-panel p-8 rounded-3xl space-y-6 hover:shadow-lg transition-all duration-300">
-              <h3 className="text-xl font-extrabold text-text-primary tracking-tight">
-                Follow My Code
-              </h3>
-              <div className="flex space-x-4">
-                <a
-                  href="https://github.com/kuldeepsilu17"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-3.5 rounded-2xl bg-bg-secondary border border-border-primary text-text-secondary hover:text-brand-accent hover:border-brand-accent/30 transition-all duration-200"
-                  aria-label="GitHub"
-                >
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
-                  </svg>
-                </a>
-                <a
-                  href="https://linkedin.com/in/kuldeep-silu-0b056539b"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-3.5 rounded-2xl bg-bg-secondary border border-border-primary text-text-secondary hover:text-brand-accent hover:border-brand-accent/30 transition-all duration-200"
-                  aria-label="LinkedIn"
-                >
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path fillRule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clipRule="evenodd" />
-                  </svg>
-                </a>
+            {/* QR Code Quick Scan Card */}
+            <div className="glass-panel p-5 sm:p-6 rounded-3xl flex items-center space-x-5 hover:shadow-lg transition-all duration-300">
+              <div className="p-2.5 bg-white rounded-2xl border border-border-primary shadow-xs shrink-0">
+                {/* Clean inline SVG QR code for https://kuldeepsilu.vercel.app */}
+                <svg className="w-20 h-20 text-neutral-950" viewBox="0 0 100 100" fill="currentColor">
+                  {/* Outer Frame */}
+                  <rect x="0" y="0" width="30" height="30" rx="4" fill="none" stroke="currentColor" strokeWidth="6" />
+                  <rect x="9" y="9" width="12" height="12" rx="2" fill="currentColor" />
+                  <rect x="70" y="0" width="30" height="30" rx="4" fill="none" stroke="currentColor" strokeWidth="6" />
+                  <rect x="79" y="9" width="12" height="12" rx="2" fill="currentColor" />
+                  <rect x="0" y="70" width="30" height="30" rx="4" fill="none" stroke="currentColor" strokeWidth="6" />
+                  <rect x="9" y="79" width="12" height="12" rx="2" fill="currentColor" />
+                  {/* Data Pattern modules */}
+                  <rect x="38" y="10" width="6" height="6" rx="1" />
+                  <rect x="52" y="10" width="6" height="6" rx="1" />
+                  <rect x="44" y="22" width="6" height="6" rx="1" />
+                  <rect x="12" y="44" width="6" height="6" rx="1" />
+                  <rect x="24" y="44" width="6" height="6" rx="1" />
+                  <rect x="38" y="38" width="8" height="8" rx="2" fill="#4f46e5" />
+                  <rect x="54" y="44" width="6" height="6" rx="1" />
+                  <rect x="70" y="44" width="6" height="6" rx="1" />
+                  <rect x="84" y="44" width="6" height="6" rx="1" />
+                  <rect x="44" y="58" width="6" height="6" rx="1" />
+                  <rect x="58" y="58" width="6" height="6" rx="1" />
+                  <rect x="38" y="74" width="6" height="6" rx="1" />
+                  <rect x="52" y="74" width="6" height="6" rx="1" />
+                  <rect x="74" y="74" width="8" height="8" rx="1" />
+                  <rect x="86" y="86" width="6" height="6" rx="1" />
+                </svg>
+              </div>
+              <div className="space-y-1">
+                <span className="text-[10px] font-mono text-brand-accent uppercase font-bold tracking-wider">
+                  Mobile Quick Connect
+                </span>
+                <h4 className="text-sm font-bold text-text-primary">
+                  Scan Portfolio QR
+                </h4>
+                <p className="text-xs text-text-muted leading-relaxed">
+                  Scan with your phone camera to open portfolio or share contact instantly.
+                </p>
               </div>
             </div>
           </div>
@@ -117,7 +161,7 @@ export default function Contact() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="glass-panel p-5 sm:p-8 md:p-10 rounded-3xl hover:shadow-xl transition-all duration-300"
+              className="glass-panel p-6 sm:p-8 md:p-10 rounded-3xl hover:shadow-xl transition-all duration-300"
             >
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -131,9 +175,9 @@ export default function Contact() {
                       name="name"
                       value={formState.name}
                       onChange={handleChange}
-                      placeholder="Your Name"
+                      placeholder="e.g. Alex Sharma"
                       required
-                      className="w-full px-4 py-2.5 rounded-xl bg-bg-secondary border border-border-primary text-text-primary placeholder-text-muted/60 focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/15 transition-all duration-200 text-sm"
+                      className="w-full px-4 py-3 rounded-2xl bg-bg-secondary border border-border-primary text-text-primary placeholder-text-muted/60 focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/15 transition-all duration-200 text-sm"
                     />
                   </div>
                   <div className="space-y-2">
@@ -146,9 +190,9 @@ export default function Contact() {
                       name="email"
                       value={formState.email}
                       onChange={handleChange}
-                      placeholder="info@example.com"
+                      placeholder="alex@example.com"
                       required
-                      className="w-full px-4 py-2.5 rounded-xl bg-bg-secondary border border-border-primary text-text-primary placeholder-text-muted/60 focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/15 transition-all duration-200 text-sm"
+                      className="w-full px-4 py-3 rounded-2xl bg-bg-secondary border border-border-primary text-text-primary placeholder-text-muted/60 focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/15 transition-all duration-200 text-sm"
                     />
                   </div>
                 </div>
@@ -163,9 +207,9 @@ export default function Contact() {
                     name="subject"
                     value={formState.subject}
                     onChange={handleChange}
-                    placeholder="Project Inquiry / Collaboration"
+                    placeholder="Project Inquiry / Job Opportunity / Collaboration"
                     required
-                    className="w-full px-4 py-2.5 rounded-xl bg-bg-secondary border border-border-primary text-text-primary placeholder-text-muted/60 focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/15 transition-all duration-200 text-sm"
+                    className="w-full px-4 py-3 rounded-2xl bg-bg-secondary border border-border-primary text-text-primary placeholder-text-muted/60 focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/15 transition-all duration-200 text-sm"
                   />
                 </div>
 
@@ -179,28 +223,34 @@ export default function Contact() {
                     rows={5}
                     value={formState.message}
                     onChange={handleChange}
-                    placeholder="Your message details..."
+                    placeholder="Tell me about your project, timeline, or requirements..."
                     required
-                    className="w-full px-4 py-2.5 rounded-xl bg-bg-secondary border border-border-primary text-text-primary placeholder-text-muted/60 focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/15 transition-all duration-200 text-sm resize-none"
+                    className="w-full px-4 py-3 rounded-2xl bg-bg-secondary border border-border-primary text-text-primary placeholder-text-muted/60 focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/15 transition-all duration-200 text-sm resize-none"
                   />
                 </div>
+
+                {status === "error" && (
+                  <div className="p-3.5 text-sm text-red-500 bg-red-500/10 border border-red-500/20 rounded-2xl text-center font-medium">
+                    Failed to send message. Please try again later or contact me directly via email.
+                  </div>
+                )}
 
                 <button
                   type="submit"
                   disabled={status === "sending"}
-                  className="w-full group flex items-center justify-center space-x-2 px-6 py-3 rounded-full bg-brand-accent hover:bg-brand-hover text-white font-bold shadow-md hover:shadow-lg hover:shadow-brand-accent/20 hover:scale-[1.01] active:scale-[0.99] transition-all duration-300 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
+                  className="w-full group flex items-center justify-center space-x-2.5 px-6 py-3.5 rounded-full bg-brand-accent hover:bg-brand-hover text-white font-bold shadow-md hover:shadow-lg hover:shadow-brand-accent/25 hover:scale-[1.01] active:scale-[0.99] transition-all duration-300 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
                 >
                   {status === "sending" ? (
                     <span>Sending...</span>
                   ) : status === "success" ? (
                     <span className="flex items-center space-x-2">
-                      <Sparkles size={16} className="text-brand-accent animate-pulse" />
-                      <span>Message Sent!</span>
+                      <Sparkles size={16} className="text-emerald-300 animate-pulse" />
+                      <span>Message Sent Successfully!</span>
                     </span>
                   ) : (
                     <>
-                      <span>Send Message</span>
-                      <Send size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
+                      <span>Start a Conversation</span>
+                      <Send size={15} className="group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-200" />
                     </>
                   )}
                 </button>
